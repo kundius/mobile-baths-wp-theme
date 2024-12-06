@@ -1,0 +1,27 @@
+{
+  "name": "euromonolit-wp-theme",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "sass-embedded": "^1.80.6",
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "embla-carousel": "^8.5.1",
+    "fslightbox": "^3.4.2",
+    "glightbox": "^3.3.0",
+    "micromodal": "^0.4.10",
+    "normalize.css": "^8.0.1",
+    "photoswipe": "^5.4.4",
+    "photoswipe-video-plugin": "^1.0.2",
+    "throttle-debounce": "^5.0.2"
+  }
+}
