@@ -102,7 +102,7 @@
             <div class="w-80 shrink-0 flex flex-col gap-2">
               <div class="grow flex">
                 <div class="project-details">
-                  <div class="project-details__title">Цена за комплект</div>
+                  <div class="project-details__title">Стоимость бани</div>
                   <div class="project-details__price">
                     <?php if ($crb_oldprice = carbon_get_the_post_meta('crb_oldprice')): ?>
                       <div class="project-details__price-old"><?php echo number_format($crb_oldprice, 0, ',', ' '); ?> <span>₽</span></div>
@@ -168,21 +168,6 @@
             </div>
           </div>
         </div>
-
-        <?php if ($crb_prices = carbon_get_the_post_meta('crb_prices')): ?>
-          <div class="project-prices my-12">
-            <?php foreach ($crb_prices as $key => $price): ?>
-              <div class="project-prices__item">
-                <div class="project-prices__item-label">
-                  <?php echo $price['name']; ?>
-                </div>
-                <div class="project-prices__item-value">
-                  <?php echo number_format($price['price'], 0, ',', ' '); ?> <span>₽</span>
-                </div>
-              </div>
-            <?php endforeach; ?>
-          </div>
-        <?php endif; ?>
 
         <div class="content my-12">
           <?php the_content(); ?>

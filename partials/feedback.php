@@ -3,7 +3,7 @@
     <div class="contacts-feedback__headline-title">Есть вопросы<br>или предложения?</div>
     <div class="contacts-feedback__headline-desc">Пишите, обязательно ответим</div>
   </div>
-  <form action="" class="contacts-feedback__form">
+  <form action="" class="contacts-feedback__form" data-feedack-form>
     <div class="contacts-feedback__form-name">
       <label class="contacts-feedback__label">Ваше имя</label>
       <input type="text" name="your-name" value="" class="contacts-feedback__input">

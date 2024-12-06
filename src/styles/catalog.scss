@@ -321,37 +321,3 @@
   display: block;
   flex-shrink: 0;
 }
-
-.project-prices {
-  padding: 44px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  box-shadow: 0 0 4px #00000026;
-  border-radius: 12px;
-  row-gap: 24px;
-  column-gap: 44px;
-}
-
-.project-prices__item {
-  display: flex;
-  gap: 16px;
-  align-items: baseline;
-  flex-grow: 1;
-}
-
-.project-prices__item-label {
-  line-height: 1;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.project-prices__item-value {
-  font-size: 24px;
-  line-height: 1;
-  color: #ada395;
-  font-weight: 700;
-  span {
-    color: #000;
-    font-size: 20px;
-  }
-}

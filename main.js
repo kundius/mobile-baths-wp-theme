@@ -9,9 +9,11 @@ import { initVideoCarousel } from './src/scripts/video-carousel'
 import { initFSModal } from './src/scripts/fs-modal'
 import { initWorkCarousel } from './src/scripts/work-carousel'
 import { initGallery } from './src/scripts/gallery'
+import { initFeedbackForm } from './src/scripts/feedback-form'
 
 initStickyHeader()
 initVideoCarousel()
 initWorkCarousel()
 initFSModal()
 initGallery()
+initFeedbackForm()
