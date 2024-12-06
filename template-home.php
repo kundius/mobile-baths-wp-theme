@@ -240,9 +240,11 @@ Template Name: Главная
                   <li>отправить заявку заявку и получить предложения от наших менеджеров;</li>
                   <li>отсортировать и вести обсуждения по выбранной мобильной&nbsp;бане.</li>
                 </ul>
+                <?php if ($catalog_page = carbon_get_theme_option('crb_catalog_page')): ?>
                 <div class="add-text__projects">
-                  <a href="<?php echo get_term_link(5, 'project_category'); ?>" class="button-primary">Показать все проекты</a>
+                  <a href="<?php echo get_the_title($catalog_page[0]['id']) ?>" class="button-primary">Показать все проекты</a>
                 </div>
+                <?php endif; ?>
                 <div class="add-text__end">
                   Чем мы отличаемся от других производителей?<br> Мы не имеем аналогов по предоставляемым возможностям.
                 </div>
