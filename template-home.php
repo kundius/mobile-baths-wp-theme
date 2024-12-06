@@ -242,7 +242,7 @@ Template Name: Главная
                 </ul>
                 <?php if ($catalog_page = carbon_get_theme_option('crb_catalog_page')): ?>
                 <div class="add-text__projects">
-                  <a href="<?php echo get_the_title($catalog_page[0]['id']) ?>" class="button-primary">Показать все проекты</a>
+                  <a href="<?php the_permalink($catalog_page[0]['id']) ?>" class="button-primary">Показать все проекты</a>
                 </div>
                 <?php endif; ?>
                 <div class="add-text__end">

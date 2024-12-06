@@ -169,7 +169,22 @@
           </div>
         </div>
 
-        <div class="content mt-16 mb-12">
+        <?php if ($crb_prices = carbon_get_the_post_meta('crb_prices')): ?>
+          <div class="project-prices my-12">
+            <?php foreach ($crb_prices as $key => $price): ?>
+              <div class="project-prices__item">
+                <div class="project-prices__item-label">
+                  <?php echo $price['name']; ?>
+                </div>
+                <div class="project-prices__item-value">
+                  <?php echo number_format($price['price'], 0, ',', ' '); ?> <span>₽</span>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+
+        <div class="content my-12">
           <?php the_content(); ?>
         </div>
 

@@ -12,8 +12,6 @@ function register_carbon_fields()
     ->where('post_template', '=', 'template-home.php')
     ->add_fields([
 
-      Field::make('textarea', 'crb_additional_content', 'Дополнительное содержимое')
-        ->set_rows(10),
       Field::make('textarea', 'crb_slogan', 'Слоган компании')
         ->set_rows(2),
 
@@ -105,6 +103,11 @@ function register_carbon_fields()
       Field::make('checkbox', 'crb_bathroom', 'Санузел'),
       Field::make('checkbox', 'crb_shower', 'Душ'),
       Field::make('text', 'crb_rooftype', 'Тип крыши'),
+      Field::make('complex', 'crb_prices', 'Цены')
+        ->add_fields([
+          Field::make('text', 'name', 'Название')->set_width(50),
+          Field::make('text', 'price', 'Цена')->set_attribute('type', 'number')->set_width(50),
+        ]),
       Field::make('media_gallery', 'crb_gallery', 'Галерея'),
       Field::make('checkbox', 'crb_is_sticky', 'Показывать на главной'),
 
