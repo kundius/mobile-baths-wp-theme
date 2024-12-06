@@ -1,24 +1,19 @@
-.catalog-section {
-  padding-bottom: 64px;
-  padding-top: 64px;
-}
-
-.catalog-section__headline {
+.category-headline {
   display: flex;
   align-items: center;
   gap: 36px;
-  padding-bottom: 28px;
+  padding-bottom: 24px;
   border-bottom: 1px solid #f2f5fa;
 }
 
-.catalog-section__headline-title {
+.category-headline__title {
   font-size: 30px;
   line-height: 1;
   color: #605447;
   font-weight: 700;
 }
 
-.catalog-section__headline-all {
+.category-headline__all {
   font-size: 10px;
   letter-spacing: 1px;
   text-decoration: underline;
@@ -30,7 +25,7 @@
   gap: 12px;
 }
 
-.catalog-section__headline-all span {
+.category-headline__all span {
   width: 32px;
   height: 32px;
   border: 2px solid #ebebeb;
@@ -39,7 +34,7 @@
   flex-shrink: 0;
 }
 
-.catalog-section__headline-all span::after {
+.category-headline__all span::after {
   content: '';
   width: 6px;
   height: 6px;
@@ -52,25 +47,25 @@
   left: 50%;
 }
 
-.catalog-section__headline-all:hover {
+.category-headline__all:hover {
   color: #b56446;
 }
 
-.catalog-section__headline-all:hover span {
+.category-headline__all:hover span {
   border-color: #b56446;
 }
 
-.catalog-section__headline-all:hover span::after {
+.category-headline__all:hover span::after {
   border-color: #b56446;
 }
 
-.catalog-section__all {
+.category-all {
   display: flex;
   justify-content: center;
   margin-top: 50px;
 }
 
-.catalog-section__all-button {
+.category-all__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,7 +88,7 @@
 
 .project-card {
   position: relative;
-  padding: 20px 20px 40px;
+  padding: 20px 20px 20px;
   transition: 0.3s ease;
   &:hover {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);

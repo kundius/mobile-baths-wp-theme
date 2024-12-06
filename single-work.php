@@ -17,25 +17,28 @@ $gallery = carbon_get_the_post_meta('crb_gallery');
     <section class="header-section">
       <div class="container">
         <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7">
+          <?php $position = 0; ?>
           <div class="header-section__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <span property="itemListElement" typeof="ListItem">
-              <a property="item" typeof="WebPage" title="Перейти к <?php echo get_the_title(2) ?>" href="<?php the_permalink(2) ?>">
-                <span property="name"><?php echo get_the_title(2) ?></span>
+              <a property="item" typeof="WebPage" title="Перейти к Главная" href="/">
+                <span property="name">Главная</span>
               </a>
-              <meta property="position" content="1">
+              <meta property="position" content="<?php echo ++$position; ?>">
             </span>
             <span class="separator"></span>
-            <span property="itemListElement" typeof="ListItem">
-              <a property="item" typeof="WebPage" title="Перейти к <?php echo get_the_title(63) ?>" href="<?php the_permalink(63) ?>">
-                <span property="name"><?php echo get_the_title(63) ?></span>
-              </a>
-              <meta property="position" content="2">
-            </span>
-            <span class="separator"></span>
+            <?php if ($works_page = carbon_get_theme_option('crb_works_page')): ?>
+              <span property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage" title="Перейти к <?php echo get_the_title($works_page[0]['id']) ?>" href="<?php the_permalink($works_page[0]['id']) ?>">
+                  <span property="name"><?php echo get_the_title($works_page[0]['id']) ?></span>
+                </a>
+                <meta property="position" content="<?php echo ++$position; ?>">
+              </span>
+              <span class="separator"></span>
+            <?php endif; ?>
             <span property="itemListElement" typeof="ListItem">
               <span property="name" class="post post-work current-item"><?php the_title() ?></span>
               <meta property="url" content="<?php the_permalink() ?>">
-              <meta property="position" content="3">
+              <meta property="position" content="<?php echo ++$position; ?>">
             </span>
           </div>
           <h1 class="header-section__page-title">

@@ -27,7 +27,25 @@ function register_carbon_fields()
       Field::make('text', 'crb_theme_whatsapp', 'WhatsApp'),
       Field::make('text', 'crb_theme_email', 'Почта'),
       Field::make('text', 'crb_theme_counters', 'Счетчики'),
-      Field::make('text', 'crb_theme_address', 'Адрес')
+      Field::make('text', 'crb_theme_address', 'Адрес'),
+      Field::make('association', 'crb_works_page', 'Страница наши работы')
+        ->set_max(1)
+        ->set_min(1)
+        ->set_types([
+          [
+            'type' => 'post',
+            'post_type' => 'page',
+          ]
+        ]),
+      Field::make('association', 'crb_catalog_page', 'Страница каталог')
+        ->set_max(1)
+        ->set_min(1)
+        ->set_types([
+          [
+            'type' => 'post',
+            'post_type' => 'page',
+          ]
+        ])
 
     ]);
 
@@ -47,7 +65,7 @@ function register_carbon_fields()
 
     ]);
 
-  Container::make('post_meta', 'Видеоотчеты')
+  Container::make('post_meta', 'Наши работы')
     ->where('post_type', '=', 'page')
     ->where('post_template', '=', 'template-works.php')
     ->add_fields([
@@ -68,7 +86,8 @@ function register_carbon_fields()
 
       Field::make('text', 'crb_year', 'Год строительства'),
       Field::make('text', 'crb_location', 'Место строительства'),
-      Field::make('media_gallery', 'crb_gallery', 'Галерея')
+      Field::make('media_gallery', 'crb_gallery', 'Галерея'),
+      Field::make('checkbox', 'crb_is_sticky', 'Показывать на главной'),
 
     ]);
 
@@ -86,7 +105,8 @@ function register_carbon_fields()
       Field::make('checkbox', 'crb_bathroom', 'Санузел'),
       Field::make('checkbox', 'crb_shower', 'Душ'),
       Field::make('text', 'crb_rooftype', 'Тип крыши'),
-      Field::make('media_gallery', 'crb_gallery', 'Галерея')
+      Field::make('media_gallery', 'crb_gallery', 'Галерея'),
+      Field::make('checkbox', 'crb_is_sticky', 'Показывать на главной'),
 
     ]);
 

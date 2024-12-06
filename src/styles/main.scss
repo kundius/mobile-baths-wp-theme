@@ -280,6 +280,9 @@ body::-webkit-scrollbar-thumb {
     thead {
       background: #fbeda1;
     }
+    tbody tr:nth-child(2n) td {
+      background: #fbfbfb;
+    }
     th {
       font-size: 18px;
       line-height: 1;

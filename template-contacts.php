@@ -21,10 +21,10 @@ Template Name: Контакты
         <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7">
           <div class="header-section__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <span property="itemListElement" typeof="ListItem">
-              <a property="item" typeof="WebPage" title="Перейти к <?php echo get_the_title(2) ?>" href="<?php the_permalink(2) ?>">
-                <span property="name"><?php echo get_the_title(2) ?></span>
+              <a property="item" typeof="WebPage" title="Перейти к Главная" href="/">
+                <span property="name">Главная</span>
               </a>
-              <meta property="position" content="1">
+              <meta property="position" content="<?php echo ++$position; ?>">
             </span>
             <span class="separator"></span>
             <span property="itemListElement" typeof="ListItem">

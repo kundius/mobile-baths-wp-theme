@@ -42,12 +42,21 @@ $pagination = [
         <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7">
           <div class="header-section__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <span property="itemListElement" typeof="ListItem">
-              <a property="item" typeof="WebPage" title="Перейти к <?php echo get_the_title(2) ?>" href="<?php the_permalink(2) ?>">
-                <span property="name"><?php echo get_the_title(2) ?></span>
+              <a property="item" typeof="WebPage" title="Перейти к Главная" href="/">
+                <span property="name">Главная</span>
               </a>
-              <meta property="position" content="1">
+              <meta property="position" content="<?php echo ++$position; ?>">
             </span>
             <span class="separator"></span>
+            <?php if ($catalog_page = carbon_get_theme_option('crb_catalog_page')): ?>
+              <span property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage" title="Перейти к <?php echo get_the_title($catalog_page[0]['id']) ?>" href="<?php the_permalink($catalog_page[0]['id']) ?>">
+                  <span property="name"><?php echo get_the_title($catalog_page[0]['id']) ?></span>
+                </a>
+                <meta property="position" content="<?php echo ++$position; ?>">
+              </span>
+              <span class="separator"></span>
+            <?php endif; ?>
             <span property="itemListElement" typeof="ListItem">
               <span property="name" class="post post-work current-item"><?php single_term_title() ?></span>
               <meta property="url" content="<?php echo get_term_link($category) ?>">
