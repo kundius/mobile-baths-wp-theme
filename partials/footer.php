@@ -161,7 +161,7 @@
           </div>
 
           <div class="modal-form__field">
-            <label class="modal-form__label">Телефон</label>
+            <label class="modal-form__label">Телефон<span>*</span></label>
             <input type="tel" name="your-phone" value="" class="modal-form__input" required>
           </div>
 
