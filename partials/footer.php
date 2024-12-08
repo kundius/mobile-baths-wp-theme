@@ -106,13 +106,18 @@
           <div class="modal-form__messages" data-feedack-form-messages></div>
 
           <div class="modal-form__field">
+            <label class="modal-form__label">Ваше имя</label>
+            <input type="text" name="your-name" value="" class="modal-form__input">
+          </div>
+
+          <div class="modal-form__field">
             <label class="modal-form__label">Телефон<span>*</span></label>
             <input type="tel" name="your-phone" value="" class="modal-form__input" required>
           </div>
 
           <div class="modal-form__field modal-form__field_submit">
             <button type="submit" class="modal-form__submit">
-              Закзать звонок
+              Заказать звонок
             </button>
           </div>
 
@@ -140,13 +145,13 @@
       <div class="modal__content">
 
         <div class="modal__title" id="modal-order-title">
-          Заказать проект бани
+          Получить консультацию<br>по проекту
         </div>
 
         <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form>
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
-          <input type="hidden" name="subject" value="Заказать проект бани">
+          <input type="hidden" name="subject" value="Получить консультацию по проекту">
 
           <div class="modal-form__messages" data-feedack-form-messages></div>
 
@@ -162,7 +167,7 @@
 
           <div class="modal-form__field modal-form__field_submit">
             <button type="submit" class="modal-form__submit">
-              Заказать проект
+              Отправить
             </button>
           </div>
 

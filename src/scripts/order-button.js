@@ -8,19 +8,9 @@ export function applyOrderButton(el) {
     const subjectInput = document.querySelector(`#modal-order [name="subject"]`)
     if (subjectInput) {
       if (!el.dataset.orderButton) {
-        subjectInput.value = `Заказать проект бани`
+        subjectInput.value = `Получить консультацию по проекту`
       } else {
-        subjectInput.value = `Заказать проект бани "${el.dataset.orderButton}"`
-      }
-    }
-
-    const subjectTitle = document.querySelector(`#modal-order .modal__title`)
-    console.log(el.dataset.orderButton)
-    if (subjectTitle) {
-      if (!el.dataset.orderButton) {
-        subjectTitle.innerHTML = `Заказать проект бани`
-      } else {
-        subjectTitle.innerHTML = `Заказать проект бани<br>"${el.dataset.orderButton}"`
+        subjectInput.value = `Получить консультацию по проекту "${el.dataset.orderButton}"`
       }
     }
 
