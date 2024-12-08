@@ -11,34 +11,16 @@ function ajax_action_feedback()
     wp_die('Данные отправлены с неподдерживаемого адреса');
   }
 
-  if (false === $_POST['anticheck'] || !empty($_POST['submitted'])) {
-    wp_die('Пошел нахрен, мальчик! (c)');
+  if (!empty($_POST['submitted'])) {
+    $errors['submitted'] = 'Что?';
   }
 
-  if (empty($_POST['your_name']) || ! isset($_POST['your_name'])) {
-    $errors['name'] = 'Пожалуйста, введите ваше имя.';
-  } else {
-    $your_name = sanitize_text_field($_POST['your_name']);
+  if (empty($_POST['approve'])) {
+    $errors['approve'] = 'Вы должны согаситься с правилами.';
   }
 
-  if (empty($_POST['your_email']) || ! isset($_POST['your_email'])) {
-    $errors['email'] = 'Пожалуйста, введите адрес вашей электронной почты.';
-  } elseif (!preg_match('/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i', $_POST['your_email'])) {
-    $errors['email'] = 'Адрес электронной почты некорректный.';
-  } else {
-    $your_email = sanitize_email($_POST['your_email']);
-  }
-
-  if (empty($_POST['your_subject']) || ! isset($_POST['your_subject'])) {
-    $your_subject = 'Сообщение с сайта';
-  } else {
-    $your_subject = sanitize_text_field($_POST['your_subject']);
-  }
-
-  if (empty($_POST['your_message']) || ! isset($_POST['your_message'])) {
-    $errors['comments'] = 'Пожалуйста, введите ваше сообщение.';
-  } else {
-    $your_message = sanitize_textarea_field($_POST['your_message']);
+  if (empty($_POST['your-phone'])) {
+    $errors['your-phone'] = 'Введите ваш телефон.';
   }
 
   if ($errors) {
@@ -50,12 +32,27 @@ function ajax_action_feedback()
       $email_to = get_option('admin_email');
     }
 
-    $body = "Имя: $your_name \nEmail: $your_email \n\nСообщение: $your_message";
-    $headers = 'From: ' . $your_name . ' <' . $email_to . '>' . "\r\n" . 'Reply-To: ' . $email_to;
+    $rows = [];
+    if (!empty($_POST['your-name'])) {
+      $body[] = 'Имя: ' . sanitize_text_field($_POST['your-name']);
+    }
+    if (!empty($_POST['your-email'])) {
+      $body[] = 'E-mail: ' . sanitize_text_field($_POST['your-email']);
+    }
+    if (!empty($_POST['your-message'])) {
+      $body[] = 'Сообщение: ' . sanitize_text_field($_POST['your-message']);
+    }
+    $body = implode("\n", $rows);
+    $headers = 'From: ' . get_bloginfo('name') . ' <' . $email_to . '>' . "\r\n" . 'Reply-To: ' . $email_to;
 
-    wp_mail($email_to, $your_subject, $body, $headers);
+    $subject = 'Обратная связь';
+    if (!empty($_POST['your-subject'])) {
+      $subject = sanitize_text_field($_POST['your-subject']);
+    }
 
-    $message_success = 'Собщение отправлено. В ближайшее время мы свяжемся с вами.';
+    wp_mail($email_to, $subject, $body, $headers);
+
+    $message_success = 'Собщение отправлено. В&nbsp;ближайшее время мы свяжемся с вами.';
 
     wp_send_json_success($message_success);
   }

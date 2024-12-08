@@ -13,7 +13,13 @@
       </div>
     </div>
     <div class="application__layout-form">
-      <form action="" class="application__form">
+      <form action="<?php echo admin_url('admin-ajax.php') ?>" class="application__form" data-feedack-form>
+        <input type="hidden" name="submitted" value="">
+        <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
+        <input type="hidden" name="subject" value="Обратная связь">
+
+        <div class="application__messages" data-feedack-form-messages></div>
+
         <div class="application__form-name">
           <label class="application__label">Ваше имя</label>
           <input type="text" name="your-name" value="" class="application__input">
@@ -29,7 +35,7 @@
         </div>
         <div class="application__form-rules">
           <label class="application__rules">
-            <input type="checkbox" name="rules" value="1" checked>
+            <input type="checkbox" name="approve" value="1" checked>
             <span></span>
             Прочитал(-а) соглашаюсь с <a href="<?php the_permalink(3); ?>">политикой обработки персональных данных</a>
           </label>

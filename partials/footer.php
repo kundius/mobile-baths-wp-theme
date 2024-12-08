@@ -1,5 +1,5 @@
 <section class="sticky-footer">
-  <button type="button" class="sticky-footer__feedback">Заказать проект бани</button>
+  <button type="button" class="sticky-footer__feedback" data-order-button>Заказать проект бани</button>
   <div class="sticky-footer__contacts">
     <a href="#" class="sticky-footer__phone"><?php echo carbon_get_theme_option('crb_theme_phone') ?></a>
     <a href="mail:<?php echo carbon_get_theme_option('crb_theme_email') ?>" class="sticky-footer__email">
@@ -42,14 +42,10 @@
     </div>
 
     <div class="underground-menu">
-      <ul>
-        <li class="page_item current_page_item"><a href="http://mobile-baths.loc/" aria-current="page">Главная</a></li>
-        <li><a href="/" class="page_item">Мобильные бани</a></li>
-        <li><a href="/" class="page_item">Акции</a></li>
-        <li><a href="/" class="page_item">Отзывы</a></li>
-        <li><a href="/" class="page_item">Наши работы</a></li>
-        <li><a href="/" class="page_item">Контакты</a></li>
-      </ul>
+      <?php wp_nav_menu([
+        'container' => false,
+        'theme_location' => 'menu-footer',
+      ]); ?>
     </div>
 
     <div class="underground-address">
@@ -89,5 +85,100 @@
 </section>
 
 <button class="scroll-up" type="button"></button>
+
+<div id="modal-call" aria-hidden="true" class="modal">
+  <div class="modal__overlay" tabindex="-1" data-modal-close>
+    <div class="modal__container" id="modal-call-content" role="dialog" aria-modal="true" aria-labelledby="modal-call-title">
+
+      <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
+
+      <div class="modal__content">
+
+        <div class="modal__title" id="modal-call-title">
+          Перезвоните мне
+        </div>
+
+        <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form>
+          <input type="hidden" name="submitted" value="">
+          <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
+          <input type="hidden" name="subject" value="Перезвоните мне">
+
+          <div class="modal-form__messages" data-feedack-form-messages></div>
+
+          <div class="modal-form__field">
+            <label class="modal-form__label">Телефон<span>*</span></label>
+            <input type="tel" name="your-phone" value="" class="modal-form__input" required>
+          </div>
+
+          <div class="modal-form__field modal-form__field_submit">
+            <button type="submit" class="modal-form__submit">
+              Закзать звонок
+            </button>
+          </div>
+
+          <div class="modal-form__field">
+            <label class="feedback-rules">
+              <input class="feedback-rules__input" type="checkbox" name="approve" value="1" checked>
+              <span class="feedback-rules__check"></span>
+              <span class="feedback-rules__text">Прочитал(-а) соглашаюсь с <a href="<?php the_permalink(3); ?>">политикой обработки персональных данных</a></span>
+            </label>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="modal-order" aria-hidden="true" class="modal">
+  <div class="modal__overlay" tabindex="-1" data-modal-close>
+    <div class="modal__container" id="modal-order-content" role="dialog" aria-modal="true" aria-labelledby="modal-order-title">
+
+      <button class="modal__close" aria-label="Закрыть" data-modal-close></button>
+
+      <div class="modal__content">
+
+        <div class="modal__title" id="modal-order-title">
+          Заказать проект бани
+        </div>
+
+        <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form>
+          <input type="hidden" name="submitted" value="">
+          <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
+          <input type="hidden" name="subject" value="Заказать проект бани">
+
+          <div class="modal-form__messages" data-feedack-form-messages></div>
+
+          <div class="modal-form__field">
+            <label class="modal-form__label">Ваше имя</label>
+            <input type="text" name="your-name" value="" class="modal-form__input">
+          </div>
+
+          <div class="modal-form__field">
+            <label class="modal-form__label">Телефон</label>
+            <input type="tel" name="your-phone" value="" class="modal-form__input" required>
+          </div>
+
+          <div class="modal-form__field modal-form__field_submit">
+            <button type="submit" class="modal-form__submit">
+              Заказать проект
+            </button>
+          </div>
+
+          <div class="modal-form__field">
+            <label class="feedback-rules">
+              <input class="feedback-rules__input" type="checkbox" name="approve" value="1" checked>
+              <span class="feedback-rules__check"></span>
+              <span class="feedback-rules__text">Прочитал(-а) соглашаюсь с <a href="<?php the_permalink(3); ?>">политикой обработки персональных данных</a></span>
+            </label>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <?php wp_footer() ?>

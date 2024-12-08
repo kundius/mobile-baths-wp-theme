@@ -11,6 +11,7 @@
 @use 'contacts';
 @use 'archive';
 @use 'micromodal';
+@use 'modal';
 @use 'catalog';
 @use 'application';
 
@@ -22,13 +23,15 @@ body {
   font-family: 'Montserrat';
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 12px;
 }
-body::-webkit-scrollbar-track {
+
+::-webkit-scrollbar-track {
   background: #fff;
 }
-body::-webkit-scrollbar-thumb {
+
+::-webkit-scrollbar-thumb {
   background-color: #f1f1fd;
   border-radius: 0;
   border: 0;

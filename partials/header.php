@@ -14,7 +14,7 @@
       </div>
       <a href="tel:<?php echo carbon_get_theme_option(
         'crb_theme_phone'
-      ); ?>" class="header__callback">
+      ); ?>" class="header__callback" data-call-button>
         <span class="header__callback-text">
           Перезвоните мне
         </span>

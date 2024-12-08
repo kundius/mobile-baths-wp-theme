@@ -102,7 +102,7 @@ $pagination = [
                   </div>
                 </div>
                 <div class="flex items-center justify-between mt-5">
-                  <button type="button" class="project-card__order">Заказать</button>
+                  <button type="button" class="project-card__order" data-order-button="<?php the_title() ?>">Заказать</button>
                   <a href="<?php the_permalink() ?>" class="project-card__details">Проект подробнее</a>
                 </div>
               </article>

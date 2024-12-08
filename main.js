@@ -10,6 +10,8 @@ import { initFSModal } from './src/scripts/fs-modal'
 import { initWorkCarousel } from './src/scripts/work-carousel'
 import { initGallery } from './src/scripts/gallery'
 import { initFeedbackForm } from './src/scripts/feedback-form'
+import { initCallButton } from './src/scripts/call-button'
+import { initOrderButton } from './src/scripts/order-button'
 
 initStickyHeader()
 initVideoCarousel()
@@ -17,3 +19,5 @@ initWorkCarousel()
 initFSModal()
 initGallery()
 initFeedbackForm()
+initCallButton()
+initOrderButton()

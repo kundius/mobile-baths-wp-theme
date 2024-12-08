@@ -145,7 +145,7 @@
                       <div class="project-details__params-value"><?php echo $crb_rooftype; ?></div>
                     <?php endif; ?>
                   </div>
-                  <button type="button" class="project-details__order">Оформить заказ</button>
+                  <button type="button" class="project-details__order" data-order-button="<?php the_title() ?>">Оформить заказ</button>
                 </div>
               </div>
 

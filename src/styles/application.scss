@@ -79,6 +79,29 @@
   row-gap: 16px;
 }
 
+.application__messages {
+  grid-column: span 2 / span 2;
+  background: hsl(210 40% 98%);
+  color: hsl(215.3 19.3% 34.5%);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid hsl(214.3 31.8% 91.4%);
+  [data-feedack-form-status='failure'] & {
+    border-color: hsl(352.7 96.1% 90%);
+    background: hsl(355.7 100% 97.3%);
+    color: hsl(346.8 77.2% 49.8%);
+  }
+  [data-feedack-form-status='success'] & {
+    border-color: hsl(152.4 76% 80.4%);
+    background: hsl(151.8 81% 95.9%);
+    color: hsl(161.4 93.5% 30.4%);
+  }
+  &:empty {
+    display: none;
+  }
+}
+
 .application__form-name {
 }
 

@@ -1,0 +1,220 @@
+@import 'variables';
+
+.modal {
+  display: none;
+
+  &.is-open {
+    display: block;
+  }
+  &[aria-hidden='false'] .modal__overlay {
+    animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+  &[aria-hidden='false'] .modal__container {
+    animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+  &[aria-hidden='true'] .modal__overlay {
+    animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+  &[aria-hidden='true'] .modal__container {
+    animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.modal__title {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.modal__close {
+  background: transparent;
+  border: 0;
+  position: absolute;
+  right: -32px;
+  top: -32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  line-height: 1;
+  font-size: 18px;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  &::before {
+    content: '\2715';
+  }
+  &:hover {
+    background: #32333d;
+  }
+}
+
+.modal__overlay {
+  will-change: transform;
+  position: fixed;
+  z-index: 300;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0009;
+  overflow: auto;
+  padding: 36px;
+  display: grid;
+  grid-template-rows: 1fr max-content 1fr;
+  grid-template-columns: 1fr 400px 1fr;
+  justify-content: center;
+}
+
+.modal__container {
+  position: relative;
+  min-width: 0;
+  max-width: 100%;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.modal__content {
+  border-radius: 12px;
+  padding: 32px;
+  background-color: rgba(255, 255, 255, 0.851);
+}
+
+
+/**************************\
+  Demo Animation Style
+\**************************/
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-form__field {
+}
+
+.modal-form__field_submit {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.modal-form__submit {
+  font-size: 16px;
+  line-height: 64px;
+  width: 260px;
+  white-space: nowrap;
+  color: #605447;
+  font-weight: 700;
+  text-align: center;
+  padding: 0 24px;
+  border: none;
+  border-radius: 32px;
+  background-image: linear-gradient(0deg, #f7f579, #fbd17b);
+  transition: .3s ease;
+
+  &:not([disabled]):hover {
+    box-shadow: 0 0 0 2px #fdc834, .939px 5.926px 7px 2px #ffbd004d;
+    background-image: linear-gradient(0deg, #fff559, #ffd541);
+  }
+  &[disabled] {
+    box-shadow: 0 0 0 2px hsl(212.7 26.8% 83.9%);
+    background-image: linear-gradient(0deg, hsl(214.3 31.8% 91.4%), hsl(212.7 26.8% 83.9%));
+  }
+}
+
+.modal-form__messages {
+  grid-column: span 2 / span 2;
+  background: hsl(210 40% 98%);
+  color: hsl(215.3 19.3% 34.5%);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid hsl(214.3 31.8% 91.4%);
+  [data-feedack-form-status="failure"] & {
+    border-color: hsl(352.7 96.1% 90%);
+    background: hsl(355.7 100% 97.3%);
+    color: hsl(346.8 77.2% 49.8%);
+  }
+  [data-feedack-form-status="success"] & {
+    border-color: hsl(152.4 76% 80.4%);
+    background: hsl(151.8 81% 95.9%);
+    color: hsl(161.4 93.5% 30.4%);
+  }
+  &:empty {
+    display: none;
+  }
+}
+
+.modal-form__input {
+  height: 43px;
+  border-radius: 2px;
+  filter: drop-shadow(0px 3px 6.5px rgba(133, 133, 189, 0.17));
+  background-color: #ffffff;
+  width: 100%;
+  display: block;
+  padding: 0 12px;
+  font-size: 16px;
+  color: #000;
+}
+
+.modal-form__label {
+  display: block;
+  font-size: 14px;
+  line-height: 72px;
+  color: #666666;
+  line-height: 24px;
+  span {
+    color: red;
+  }
+}
+
+.modal-form__textarea {
+  border-radius: 2px;
+  filter: drop-shadow(0px 3px 6.5px rgba(133, 133, 189, 0.17));
+  background-color: #ffffff;
+  width: 100%;
+  display: block;
+  padding: 12px;
+  font-size: 16px;
+  color: #000;
+}
