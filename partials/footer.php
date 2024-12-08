@@ -1,5 +1,5 @@
 <section class="sticky-footer">
-  <button type="button" class="sticky-footer__feedback" data-order-button>Заказать проект бани</button>
+  <button type="button" class="sticky-footer__feedback" data-order-button>Заказать обратный звонок</button>
   <div class="sticky-footer__contacts">
     <a href="#" class="sticky-footer__phone"><?php echo carbon_get_theme_option('crb_theme_phone') ?></a>
     <a href="mail:<?php echo carbon_get_theme_option('crb_theme_email') ?>" class="sticky-footer__email">
