@@ -15,8 +15,9 @@ export function applyGallery(gallery) {
     slidesToScroll: 'auto'
   })
   const emblaApiThumbs = EmblaCarousel(thumbsNode, {
+    // containScroll: 'trimSnaps',
     containScroll: 'trimSnaps',
-    loop: true,
+    // loop: true,
     dragFree: true
   })
 
