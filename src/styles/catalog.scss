@@ -139,7 +139,82 @@
 
 .gallery-thumbs__container {
   display: flex;
-  grid-column-gap: var(--carousel-gap);
+  // grid-column-gap: var(--carousel-gap);
+}
+
+.gallery-thumbs__prev {
+  position: absolute;
+}
+
+.gallery-thumbs__next {
+  position: absolute;
+}
+
+.gallery-thumbs__prev {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  margin-top: -16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: hsl(0deg 0% 96.08% / 80%);
+  color: #b2b8c2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &[disabled] {
+    background: #f5f5f5;
+    opacity: 0.6;
+    display: none;
+    
+  }
+  &:not([disabled]):hover {
+    color: #464646;
+  }
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    margin-left: 3px;
+    border-left: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    display: block;
+  }
+}
+
+.gallery-thumbs__next {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  margin-top: -16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: hsl(0deg 0% 96.08% / 80%);
+  color: #b2b8c2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &[disabled] {
+    background: #f5f5f5;
+    opacity: 0.6;
+    display: none;
+  }
+  &:not([disabled]):hover {
+    color: #464646;
+  }
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg);
+    display: block;
+  }
 }
 
 .gallery-thumbs__slide {
@@ -149,12 +224,19 @@
         var(--carousel-columns)
     );
   min-width: 0;
+  margin: 0 calc(var(--carousel-gap) / 2);
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  border: 2px solid transparent;
-  &.embla-thumbs__slide--selected {
-    border-color: #ffd152;
+  &.embla-thumbs__slide--selected::after {
+    content: '';
+    position: absolute;
+    border-radius: 12px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #ffd152;
   }
   img {
     width: 100%;

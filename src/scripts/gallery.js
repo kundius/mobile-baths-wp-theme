@@ -4,32 +4,41 @@ import { addThumbBtnsClickHandlers, addToggleThumbBtnsActive } from './EmblaCaro
 
 export function applyGallery(gallery) {
   const mainNode = gallery.querySelector('[data-gallery-main-viewport]')
-  const prevNode = gallery.querySelector('[data-gallery-main-prev]')
-  const nextNode = gallery.querySelector('[data-gallery-main-next]')
-  const thumbNode = gallery.querySelector('[data-gallery-thumbs-viewport]')
+  const mainPrevNode = gallery.querySelector('[data-gallery-main-prev]')
+  const mainNextNode = gallery.querySelector('[data-gallery-main-next]')
+  const thumbsNode = gallery.querySelector('[data-gallery-thumbs-viewport]')
+  const thumbsPrevNode = gallery.querySelector('[data-gallery-thumbs-prev]')
+  const thumbsNextNode = gallery.querySelector('[data-gallery-thumbs-next]')
 
   const emblaApiMain = EmblaCarousel(mainNode, {
     loop: false,
     slidesToScroll: 'auto'
   })
-  const emblaApiThumb = EmblaCarousel(thumbNode, {
-    containScroll: 'keepSnaps',
+  const emblaApiThumbs = EmblaCarousel(thumbsNode, {
+    containScroll: 'trimSnaps',
+    loop: true,
     dragFree: true
   })
 
-  const removePrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
+  const removeMainPrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
     emblaApiMain,
-    prevNode,
-    nextNode
+    mainPrevNode,
+    mainNextNode
   )
-  const removeThumbBtnsClickHandlers = addThumbBtnsClickHandlers(emblaApiMain, emblaApiThumb)
-  const removeToggleThumbBtnsActive = addToggleThumbBtnsActive(emblaApiMain, emblaApiThumb)
+  const removeThumbsPrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
+    emblaApiThumbs,
+    thumbsPrevNode,
+    thumbsNextNode
+  )
+  const removeThumbBtnsClickHandlers = addThumbBtnsClickHandlers(emblaApiMain, emblaApiThumbs)
+  const removeToggleThumbBtnsActive = addToggleThumbBtnsActive(emblaApiMain, emblaApiThumbs)
 
   emblaApiMain
-    .on('destroy', removePrevNextBtnsClickHandlers)
+    .on('destroy', removeMainPrevNextBtnsClickHandlers)
     .on('destroy', removeThumbBtnsClickHandlers)
     .on('destroy', removeToggleThumbBtnsActive)
-  emblaApiThumb
+  emblaApiThumbs
+    .on('destroy', removeThumbsPrevNextBtnsClickHandlers)
     .on('destroy', removeThumbBtnsClickHandlers)
     .on('destroy', removeToggleThumbBtnsActive)
 }

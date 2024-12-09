@@ -15,12 +15,12 @@ export function applyOrderButton(el) {
     }
 
     MicroModal.show('modal-order', {
-      onShow: () => {
-        disableScroll()
-      },
-      onClose: () => {
-        enableScroll()
-      },
+      // onShow: () => {
+      //   disableScroll()
+      // },
+      // onClose: () => {
+      //   enableScroll()
+      // },
       awaitOpenAnimation: true,
       awaitCloseAnimation: true,
       closeTrigger: 'data-modal-close'

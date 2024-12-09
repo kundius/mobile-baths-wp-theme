@@ -6,12 +6,12 @@ export function applyCallButton(el) {
     e.preventDefault()
 
     MicroModal.show('modal-call', {
-      onShow: () => {
-        disableScroll()
-      },
-      onClose: () => {
-        enableScroll()
-      },
+      // onShow: () => {
+      //   disableScroll()
+      // },
+      // onClose: () => {
+      //   enableScroll()
+      // },
       awaitOpenAnimation: true,
       awaitCloseAnimation: true,
       closeTrigger: 'data-modal-close'
