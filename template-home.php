@@ -91,6 +91,12 @@ Template Name: Главная
                       <?php if ($crb_bestprice = carbon_get_the_post_meta('crb_bestprice')): ?>
                         <div class="project-flags__bestprice">Лучшая цена</div>
                       <?php endif; ?>
+                      <?php if ($crb_new = carbon_get_the_post_meta('crb_new')): ?>
+                        <div class="project-flags__new">Новинка</div>
+                      <?php endif; ?>
+                      <?php if ($crb_action = carbon_get_the_post_meta('crb_action')): ?>
+                        <div class="project-flags__action">Акция</div>
+                      <?php endif; ?>
                     </div>
                   </figure>
                   <div class="project-card__title"><?php the_title() ?></div>
@@ -254,23 +260,32 @@ Template Name: Главная
               </div>
             </div>
             <div class="w-1/2 px-12">
-              <form action="" class="feedback">
+              <form action="<?php echo admin_url('admin-ajax.php') ?>" class="feedback" data-feedack-form>
+                <input type="hidden" name="submitted" value="">
+                <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
+                <input type="hidden" name="subject" value="Хочу задать вопрос">
+
                 <div class="feedback__headline">
                   <div class="feedback__headline-icon"></div>
                   <div class="feedback__headline-title">Хочу задать вопрос</div>
                   <div class="feedback__headline-desc">Отправьте нам сообщение, и мы свяжемся с вами в ближайшее время</div>
                 </div>
+
+                <div class="feedback__messages" data-feedack-form-messages></div>
+
                 <div class="feedback__fields">
                   <input type="text" name="your-name" value="" placeholder="Ваше имя">
-                  <input type="email" name="your-email" value="" placeholder="E-mail*">
-                  <input type="tel" name="your-phone" value="" placeholder="Телефон">
+                  <input type="email" name="your-email" value="" placeholder="E-mail">
+                  <input type="tel" name="your-phone" value="" placeholder="Телефон*" required>
                   <textarea name="your-message" placeholder="Задайте свой вопрос" rows="4"></textarea>
                 </div>
+
                 <label class="feedback__rules">
-                  <input type="checkbox" name="rules" value="1" checked>
+                  <input type="checkbox" name="approve" value="1" checked>
                   <span></span>
                   Прочитал(-а) соглашаюсь с <a href="<?php the_permalink(3); ?>">политикой обработки персональных данных</a>
                 </label>
+
                 <button type="submit" class="feedback__submit">
                   Отправить
                 </button>

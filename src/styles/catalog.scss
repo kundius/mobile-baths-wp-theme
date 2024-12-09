@@ -365,7 +365,35 @@
 }
 
 .project-flags__bestprice {
-  background: url('../images/best-offer.png') no-repeat 50% 50%;
+  background: url('../images/flag-best-offer.png') no-repeat 50% 50%;
+  background-size: 100% 100%;
+  width: 123px;
+  height: 41px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px 0 0 16px;
+}
+
+.project-flags__new {
+  background: url('../images/flag-new.png') no-repeat 50% 50%;
+  background-size: 100% 100%;
+  width: 123px;
+  height: 41px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px 0 0 16px;
+}
+
+.project-flags__action {
+  background: url('../images/flag-action.png') no-repeat 50% 50%;
   background-size: 100% 100%;
   width: 123px;
   height: 41px;

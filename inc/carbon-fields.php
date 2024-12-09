@@ -97,6 +97,8 @@ function register_carbon_fields()
       Field::make('text', 'crb_oldprice', 'Старая цена')->set_attribute('type', 'number'),
       Field::make('text', 'crb_price', 'Цена')->set_attribute('type', 'number'),
       Field::make('checkbox', 'crb_bestprice', 'Лучшая цена'),
+      Field::make('checkbox', 'crb_new', 'Новинка'),
+      Field::make('checkbox', 'crb_action', 'Акция'),
       Field::make('text', 'crb_number', 'Номер проекта'),
       Field::make('text', 'crb_dimensions', 'Размер'),
       Field::make('complex', 'crb_params', 'Параметры')

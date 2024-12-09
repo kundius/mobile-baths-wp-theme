@@ -8,3 +8,4 @@ include('inc/theme.php');
 include('inc/assets.php');
 include('inc/seo.php');
 include('inc/menu.php');
+include('inc/shortcodes.php');

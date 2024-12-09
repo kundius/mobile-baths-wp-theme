@@ -85,6 +85,12 @@
                       <?php if ($crb_bestprice = carbon_get_the_post_meta('crb_bestprice')): ?>
                         <div class="project-flags__bestprice">Лучшая цена</div>
                       <?php endif; ?>
+                      <?php if ($crb_new = carbon_get_the_post_meta('crb_new')): ?>
+                        <div class="project-flags__new">Новинка</div>
+                      <?php endif; ?>
+                      <?php if ($crb_action = carbon_get_the_post_meta('crb_action')): ?>
+                        <div class="project-flags__action">Акция</div>
+                      <?php endif; ?>
                     </div>
                   </div>
                   <div class="gallery-thumbs">
