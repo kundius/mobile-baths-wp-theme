@@ -83,6 +83,11 @@ Template Name: Каталог
                 <article class="project-card">
                   <figure class="project-card__image">
                     <?php the_post_thumbnail('archive') ?>
+                    <div class="project-flags">
+                      <?php if ($crb_bestprice = carbon_get_the_post_meta('crb_bestprice')): ?>
+                        <div class="project-flags__bestprice">Лучшая цена</div>
+                      <?php endif; ?>
+                    </div>
                   </figure>
                   <div class="project-card__title"><?php the_title() ?></div>
                   <div class="flex items-center justify-between mt-8">

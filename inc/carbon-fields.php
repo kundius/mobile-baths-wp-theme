@@ -99,10 +99,11 @@ function register_carbon_fields()
       Field::make('checkbox', 'crb_bestprice', 'Лучшая цена'),
       Field::make('text', 'crb_number', 'Номер проекта'),
       Field::make('text', 'crb_dimensions', 'Размер'),
-      Field::make('checkbox', 'crb_restroom', 'Комната отдыха'),
-      Field::make('checkbox', 'crb_bathroom', 'Санузел'),
-      Field::make('checkbox', 'crb_shower', 'Душ'),
-      Field::make('text', 'crb_rooftype', 'Тип крыши'),
+      Field::make('complex', 'crb_params', 'Параметры')
+        ->add_fields([
+          Field::make('text', 'name', 'Название')->set_width(50),
+          Field::make('text', 'content', 'Значение')->set_width(50),
+        ]),
       Field::make('media_gallery', 'crb_gallery', 'Галерея'),
       Field::make('checkbox', 'crb_is_sticky', 'Показывать на главной'),
 

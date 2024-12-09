@@ -35,12 +35,10 @@ Template Name: Главная
           <div class="bg-white rounded p-12">
             <div class="section-about__video">
               <div class="section-about__video-slogan">
-                <img src="<?php bloginfo(
-                            'template_url'
-                          ); ?>/src/images/video-slogan.png" alt="Баня строить и жить помогает">
+                <img src="<?php bloginfo('template_url'); ?>/src/images/video-slogan.png" alt="Баня строить и жить помогает">
               </div>
               <div class="section-about__video-player">
-                <div class="w-[640px] h-[360px] bg-slate-300"></div>
+                <iframe src="https://rutube.ru/play/embed/af32a23a57e09654b12ad4407000f8c7/" width="640px" height="360px" frameborder="0" allow="fullscreen" allowfullscreen=""></iframe>
               </div>
             </div>
             <div class="section-about__content">
@@ -89,6 +87,11 @@ Template Name: Главная
                 <article class="project-card">
                   <figure class="project-card__image">
                     <?php the_post_thumbnail('archive') ?>
+                    <div class="project-flags">
+                      <?php if ($crb_bestprice = carbon_get_the_post_meta('crb_bestprice')): ?>
+                        <div class="project-flags__bestprice">Лучшая цена</div>
+                      <?php endif; ?>
+                    </div>
                   </figure>
                   <div class="project-card__title"><?php the_title() ?></div>
                   <div class="flex items-center justify-between mt-8">
@@ -241,9 +244,9 @@ Template Name: Главная
                   <li>отсортировать и вести обсуждения по выбранной мобильной&nbsp;бане.</li>
                 </ul>
                 <?php if ($catalog_page = carbon_get_theme_option('crb_catalog_page')): ?>
-                <div class="add-text__projects">
-                  <a href="<?php the_permalink($catalog_page[0]['id']) ?>" class="button-primary">Показать все проекты</a>
-                </div>
+                  <div class="add-text__projects">
+                    <a href="<?php the_permalink($catalog_page[0]['id']) ?>" class="button-primary">Показать все проекты</a>
+                  </div>
                 <?php endif; ?>
                 <div class="add-text__end">
                   Чем мы отличаемся от других производителей?<br> Мы не имеем аналогов по предоставляемым возможностям.

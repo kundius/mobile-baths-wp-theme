@@ -37,10 +37,23 @@
 .sticky-footer__phone {
   font-size: 14px;
   line-height: 24px;
-  display: inline-block;
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
   color: #cccccc;
   font-weight: 600;
   text-decoration: none;
+}
+
+.sticky-footer__phone span {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #d2d2d2;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sticky-footer__email {

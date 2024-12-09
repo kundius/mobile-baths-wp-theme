@@ -81,6 +81,11 @@
                     </div>
                     <button type="button" data-gallery-main-prev class="gallery-main__prev"></button>
                     <button type="button" data-gallery-main-next class="gallery-main__next"></button>
+                    <div class="project-flags">
+                      <?php if ($crb_bestprice = carbon_get_the_post_meta('crb_bestprice')): ?>
+                        <div class="project-flags__bestprice">Лучшая цена</div>
+                      <?php endif; ?>
+                    </div>
                   </div>
                   <div class="gallery-thumbs">
                     <div class="gallery-thumbs__viewport" data-gallery-thumbs-viewport>
@@ -103,6 +108,7 @@
               <div class="grow flex">
                 <div class="project-details">
                   <div class="project-details__title">Стоимость бани</div>
+
                   <div class="project-details__price">
                     <?php if ($crb_oldprice = carbon_get_the_post_meta('crb_oldprice')): ?>
                       <div class="project-details__price-old"><?php echo number_format($crb_oldprice, 0, ',', ' '); ?> <span>₽</span></div>
@@ -111,40 +117,37 @@
                       <div class="project-details__price-current"><?php echo number_format($crb_price, 0, ',', ' '); ?> <span>₽</span></div>
                     <?php endif; ?>
                   </div>
+
                   <?php if ($crb_area = carbon_get_the_post_meta('crb_area')): ?>
                     <div class="project-details__area">
                       <div class="project-details__area-label">Площадь</div>
                       <div class="project-details__area-value"><?php echo number_format($crb_area, 1, ',', ' '); ?> <span>м<sup>2</sup></span></div>
                     </div>
                   <?php endif; ?>
-                  <div class="project-details__params">
-                    <?php if ($crb_number = carbon_get_the_post_meta('crb_number')): ?>
-                      <div class="project-details__params-label">Номер проекта:</div>
-                      <div class="project-details__params-value"><?php echo $crb_number; ?></div>
-                    <?php endif; ?>
-                    <?php if ($crb_dimensions = carbon_get_the_post_meta('crb_dimensions')): ?>
-                      <div class="project-details__params-label">Размер:</div>
-                      <div class="project-details__params-value"><?php echo $crb_dimensions; ?></div>
-                    <?php endif; ?>
-                    <div class="project-details__params-label">&nbsp;</div>
-                    <div class="project-details__params-value">&nbsp;</div>
-                    <?php if ($crb_restroom = carbon_get_the_post_meta('crb_restroom')): ?>
-                      <div class="project-details__params-label">Комната отдыха:</div>
-                      <div class="project-details__params-value">есть</div>
-                    <?php endif; ?>
-                    <?php if ($crb_bathroom = carbon_get_the_post_meta('crb_bathroom')): ?>
-                      <div class="project-details__params-label">Санузел:</div>
-                      <div class="project-details__params-value">есть</div>
-                    <?php endif; ?>
-                    <?php if ($crb_shower = carbon_get_the_post_meta('crb_shower')): ?>
-                      <div class="project-details__params-label">Душ:</div>
-                      <div class="project-details__params-value">есть</div>
-                    <?php endif; ?>
-                    <?php if ($crb_rooftype = carbon_get_the_post_meta('crb_rooftype')): ?>
-                      <div class="project-details__params-label">Тип крыши:</div>
-                      <div class="project-details__params-value"><?php echo $crb_rooftype; ?></div>
+
+                  <div class="project-details__all-params">
+                    <div class="project-details__params">
+                      <?php if ($crb_number = carbon_get_the_post_meta('crb_number')): ?>
+                        <div class="project-details__params-label">Номер проекта:</div>
+                        <div class="project-details__params-value"><?php echo $crb_number; ?></div>
+                      <?php endif; ?>
+
+                      <?php if ($crb_dimensions = carbon_get_the_post_meta('crb_dimensions')): ?>
+                        <div class="project-details__params-label">Размер:</div>
+                        <div class="project-details__params-value"><?php echo $crb_dimensions; ?></div>
+                      <?php endif; ?>
+                    </div>
+
+                    <?php if ($crb_params = carbon_get_the_post_meta('crb_params')): ?>
+                      <div class="project-details__params">
+                        <?php foreach ($crb_params as $param): ?>
+                          <div class="project-details__params-label"><?php echo $param['name']; ?></div>
+                          <div class="project-details__params-value"><?php echo $param['content']; ?></div>
+                        <?php endforeach; ?>
+                      </div>
                     <?php endif; ?>
                   </div>
+
                   <button type="button" class="project-details__order" data-order-button="<?php the_title() ?>">Оформить заказ</button>
                 </div>
               </div>

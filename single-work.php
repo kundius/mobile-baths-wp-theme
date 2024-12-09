@@ -100,7 +100,7 @@ $gallery = carbon_get_the_post_meta('crb_gallery');
                   href="<?php echo wp_get_attachment_image_url($id, 'original') ?>"
                   class="work-gallery__item"
                   target="_blank"
-                  data-fslightbox="gallery">
+                  data-work-carousel-trigger="<?php echo $key + 1; ?>">
                   <?php echo wp_get_attachment_image($id, 'work-small'); ?>
                 </a>
               <?php endforeach; ?>

@@ -1,7 +1,10 @@
 <section class="sticky-footer">
   <button type="button" class="sticky-footer__feedback" data-order-button>Заказать обратный звонок</button>
   <div class="sticky-footer__contacts">
-    <a href="#" class="sticky-footer__phone"><?php echo carbon_get_theme_option('crb_theme_phone') ?></a>
+    <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone') ?>" class="sticky-footer__phone">
+      <span><?php icon('phone', 12) ?></span>
+      <?php echo carbon_get_theme_option('crb_theme_phone') ?>
+    </a>
     <a href="mail:<?php echo carbon_get_theme_option('crb_theme_email') ?>" class="sticky-footer__email">
       <span><?php icon('mail', 12) ?></span>
       <?php echo carbon_get_theme_option('crb_theme_email') ?>
