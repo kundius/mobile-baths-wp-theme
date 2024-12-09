@@ -70,14 +70,22 @@ $pagination = [
                 <?php foreach ($slides as $key => $slide): ?>
                   <div class="video-carousel__slide">
                     <a
-                      href="<?php echo $slide['url']; ?>"
+                      href="#video-<?php echo $key; ?>"
                       target="_blank"
-                      data-fs-modal
-                      data-fs-modal-group="video"
-                      data-fs-modal-type="video">
+                      data-fslightbox="gallery">
                       <?php echo wp_get_attachment_image($slide['photo'], 'archive'); ?>
                       <span class="video-carousel__slide-play"></span>
                     </a>
+                    <div class="hidden">
+                      <iframe
+                        src="<?php echo $slide['url']; ?>"
+                        id="video-<?php echo $key; ?>"
+                        width="1920px"
+                        height="1080px"
+                        frameBorder="0"
+                        allow="fullscreen"
+                        allowFullScreen></iframe>
+                    </div>
                   </div>
                 <?php endforeach; ?>
               </div>

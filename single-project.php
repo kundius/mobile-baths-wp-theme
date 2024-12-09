@@ -66,14 +66,10 @@
                       <div class="gallery-main__container">
                         <?php foreach ($gallery as $key => $id): ?>
                           <div class="gallery-main__slide">
-                              <!-- data-fs-modal
-                              data-fs-modal-group="catalog-large"
-                              data-fs-modal-type="image" -->
                             <a
                               href="<?php echo wp_get_attachment_image_url($id, 'original') ?>"
                               target="_blank"
-                              data-fslightbox="gallery"
-                              >
+                              data-fslightbox="gallery">
                               <?php echo wp_get_attachment_image($id, 'work-large'); ?>
                               <span class="gallery-main__loupe">
                                 <?php icon('loupe', 24); ?>

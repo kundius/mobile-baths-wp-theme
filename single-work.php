@@ -61,9 +61,7 @@ $gallery = carbon_get_the_post_meta('crb_gallery');
                         <a
                           href="<?php echo wp_get_attachment_image_url($id, 'original') ?>"
                           target="_blank"
-                          data-fs-modal
-                          data-fs-modal-group="work-large"
-                          data-fs-modal-type="image">
+                          data-fslightbox="gallery">
                           <?php echo wp_get_attachment_image($id, 'work-large'); ?>
                           <span class="work-carousel__loupe">
                             <?php icon('loupe', 24); ?>
@@ -102,9 +100,7 @@ $gallery = carbon_get_the_post_meta('crb_gallery');
                   href="<?php echo wp_get_attachment_image_url($id, 'original') ?>"
                   class="work-gallery__item"
                   target="_blank"
-                  data-fs-modal
-                  data-fs-modal-group="work-small"
-                  data-fs-modal-type="image">
+                  data-fslightbox="gallery">
                   <?php echo wp_get_attachment_image($id, 'work-small'); ?>
                 </a>
               <?php endforeach; ?>

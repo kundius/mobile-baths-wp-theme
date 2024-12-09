@@ -6,7 +6,6 @@ import './src/images/logo-dark.png'
 import './src/images/sprite.svg'
 import { initStickyHeader } from './src/scripts/sticky-header'
 import { initVideoCarousel } from './src/scripts/video-carousel'
-import { initFSModal } from './src/scripts/fs-modal'
 import { initWorkCarousel } from './src/scripts/work-carousel'
 import { initGallery } from './src/scripts/gallery'
 import { initFeedbackForm } from './src/scripts/feedback-form'
@@ -17,7 +16,6 @@ import fslightbox from 'fslightbox'
 initStickyHeader()
 initVideoCarousel()
 initWorkCarousel()
-initFSModal()
 initGallery()
 initFeedbackForm()
 initCallButton()
