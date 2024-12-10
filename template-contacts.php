@@ -61,7 +61,9 @@ Template Name: Контакты
                     <?php icon('marker-filled', 20); ?>
                   </div>
                   <div class="contacts-address__text">
-                    <div><span><strong>Пн - Сб</strong> : 09.00 - 20.00, <strong>Вс</strong> - выходной, без перерывов</span></div>
+                    <div>
+                      <span><strong>Пн - Сб</strong> : 09.00 - 20.00, <strong>Вс</strong> - выходной, без перерывов</span>
+                    </div>
                     <div class="mt-6">
                       <?php echo carbon_get_theme_option('crb_theme_address') ?>
                     </div>
