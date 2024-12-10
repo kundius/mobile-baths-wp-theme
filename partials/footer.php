@@ -33,7 +33,7 @@
         </span>
         <span class="underground-phone__text">
           <span class="underground-phone__value"><?php echo carbon_get_theme_option('crb_theme_phone') ?></span>
-          <span class="underground-phone__desc">звонок по России бесплатный</span>
+          <!-- <span class="underground-phone__desc">звонок по России бесплатный</span> -->
         </span>
       </a>
       <a href="whatsapp://send?text=Hello&phone=<?php echo carbon_get_theme_option('crb_theme_whatsapp') ?>" class="underground-whatsapp">

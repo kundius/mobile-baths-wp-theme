@@ -1,5 +1,3 @@
-@use 'variables';
-
 @use 'fonts';
 @use 'header';
 @use 'home';
@@ -13,6 +11,8 @@
 @use 'modal';
 @use 'catalog';
 @use 'application';
+
+@import 'variables';
 
 :root {
   --header-height: 68px;
@@ -63,6 +63,10 @@ body {
   max-width: 100%;
   padding-left: 24px;
   padding-right: 24px;
+
+  @include max-xl {
+    width: 1008px;
+  }
 }
 
 .shadow-main {

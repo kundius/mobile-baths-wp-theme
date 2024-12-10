@@ -52,7 +52,7 @@ Template Name: Контакты
                   </span>
                   <span class="contacts-phone__text">
                     <span class="contacts-phone__value"><?php echo carbon_get_theme_option('crb_theme_phone'); ?></span>
-                    <span class="contacts-phone__desc">звонок по России бесплатный</span>
+                    <!-- <span class="contacts-phone__desc">звонок по России бесплатный</span> -->
                   </span>
                 </a>
 

@@ -1,3 +1,5 @@
+@import 'variables';
+
 .section-about__video {
   display: grid;
   align-items: center;
@@ -13,6 +15,11 @@
 
 .section-about__video-player {
   display: flex;
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 640 / 360;
+  }
 }
 
 .section-about__content {
@@ -37,6 +44,10 @@
   flex-direction: column;
   justify-content: center;
   gap: 12px;
+
+  @include max-xl {
+    min-height: 120px;
+  }
 }
 
 .section-warranty::before {
@@ -69,12 +80,20 @@
   color: rgb(255, 255, 255);
   font-weight: bold;
   line-height: 1;
+
+  @include max-xl {
+    font-size: 16px;
+  }
 }
 
 .section-warranty-desc {
   font-size: 14px;
   color: rgb(255, 255, 255);
   line-height: 1;
+
+  @include max-xl {
+    font-size: 12px;
+  }
 }
 
 .section-add {
@@ -132,5 +151,6 @@
 .add-text__end {
   font-size: 16px;
   line-height: 1.5;
-  color: #575758;text-align: center;
+  color: #575758;
+  text-align: center;
 }

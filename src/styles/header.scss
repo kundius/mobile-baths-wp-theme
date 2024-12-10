@@ -1,3 +1,5 @@
+@import 'variables';
+
 .header-section {
   background: #fdbc58 url('../images/header-landing-shd.jpg') no-repeat 50% 0;
   background-size: auto;
@@ -86,6 +88,10 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   height: var(--header-height);
   align-items: center;
+
+  @include max-xl {
+    gap: 12px;
+  }
 }
 
 .header__logo {
@@ -93,10 +99,16 @@
   height: 52px;
   background: url('../images/logo.png') no-repeat 50% 50%;
   background-size: contain;
+  flex-shrink: 0;
 
   [data-sticky-header='active'] & {
     margin-top: -2px;
     background-image: url('../images/logo-dark.png');
+  }
+
+  @include max-xl {
+    width: 180px;
+    height: 45px;
   }
 }
 
@@ -150,6 +162,10 @@
 
   [data-sticky-header='active'] & {
     color: #605447;
+  }
+
+  @include max-xl {
+    font-size: 13px;
   }
 }
 
@@ -260,6 +276,13 @@
   &:hover {
     box-shadow: 0 0 0 2px #fdc834, 0.939px 5.926px 7px 2px rgba(255, 189, 0, 0.3);
     background-image: linear-gradient(0deg, #fff559 0%, #ffd541 100%);
+  }
+
+  @include max-xl {
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 36px;
+    font-size: 13px;
   }
 }
 

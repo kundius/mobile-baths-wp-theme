@@ -1,3 +1,5 @@
+@import 'variables';
+
 .category-headline {
   display: flex;
   align-items: center;
@@ -88,10 +90,15 @@
 
 .project-card {
   position: relative;
-  padding: 20px 20px 20px;
+  padding: calc(20em / 16);
   transition: 0.3s ease;
+
   &:hover {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  }
+
+  @include max-xl {
+    font-size: 90%;
   }
 }
 
@@ -101,31 +108,36 @@
 }
 
 .project-card__title {
-  font-size: 14px;
+  font-size: calc(14em / 16);
   text-transform: uppercase;
   color: #010101;
   font-weight: 700;
-  margin-top: 12px;
+  margin-top: calc(12em / 14);
 }
 
 .project-card__area {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: calc(8em / 16);
 }
 
 .project-card__area-label {
-  font-size: 12px;
+  font-size: calc(12em / 16);
   text-transform: uppercase;
   color: #666666;
 }
 
 .project-card__area-value {
-  font-size: 18px;
+  font-size: calc(18em / 16);
   color: #666666;
+  
   span {
-    font-size: 14px;
+    font-size: calc(14em / 18);
   }
+
+  // @include max-xl {
+  //   font-size: 16px;
+  // }
 }
 
 .project-card__price {
@@ -137,60 +149,72 @@
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 12px;
+  font-size: calc(12em / 16);
   text-decoration: line-through;
   color: #666666;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: calc(4em / 12);
 }
 
 .project-card__price-current {
-  font-size: 30px;
-  letter-spacing: 1px;
+  font-size: calc(30em / 16);
+  letter-spacing: 0.025em;
   color: #ada395;
   font-weight: 700;
   line-height: 1;
   display: flex;
   align-items: baseline;
-  gap: 4px;
+  gap: calc(4em / 30);
+  
   span {
     color: #000;
-    font-size: 16px;
+    font-size: calc(16em / 30);
   }
+
+  // @include max-xl {
+  //   font-size: 24px;
+  // }
 }
 
 .project-card__order {
   position: relative;
   z-index: 20;
-  font-size: 15px;
+  font-size: calc(15em / 16);
   letter-spacing: 0.1em;
-  line-height: 30px;
+  line-height: calc(30em / 15);
   text-transform: uppercase;
   color: #4e4528;
   font-weight: 700;
-  padding: 0 24px;
+  padding: 0 calc(24em / 15);
   white-space: nowrap;
-  height: 40px;
-  border-radius: 20px;
-  box-shadow: 0px 3px 7px rgba(255, 189, 0, 0.2);
+  height: calc(40em / 15);
+  border-radius: calc(20em / 15);
+  box-shadow: 0px calc(3em / 15) calc(7em / 15) rgba(255, 189, 0, 0.2);
   background-color: #ffd251;
   border: 1px solid #f7c73e;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: 0.3s ease;
+
   &:hover {
     background-color: #fed30c;
     border-color: #fdc834;
     color: #000000;
   }
+
+  // @include max-xl {
+  //   padding-left: 16px;
+  //   padding-right: 16px;
+  // }
 }
 
 .project-card__details {
   display: inline-block;
-  font-size: 12px;
+  font-size: calc(12em / 16);
   color: #666666;
   font-weight: 700;
+
   &:hover {
     text-decoration: underline;
     color: #333333;

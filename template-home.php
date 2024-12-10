@@ -259,7 +259,7 @@ Template Name: Главная
                 </div>
               </div>
             </div>
-            <div class="w-1/2 px-12">
+            <div class="w-1/2 xl:px-12">
               <form action="<?php echo admin_url('admin-ajax.php') ?>" class="feedback" data-feedack-form>
                 <input type="hidden" name="submitted" value="">
                 <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
