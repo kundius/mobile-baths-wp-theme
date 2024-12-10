@@ -64,6 +64,7 @@ Template Name: Контакты
                     <div>
                       <span><strong>Пн - Сб</strong> : 09.00 - 20.00, <strong>Вс</strong> - выходной, без перерывов</span>
                     </div>
+                    
                     <div class="mt-6">
                       <?php echo carbon_get_theme_option('crb_theme_address') ?>
                     </div>
