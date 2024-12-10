@@ -18,7 +18,7 @@ Template Name: Главная
 
     <section class="header-section header-section_landing">
       <div class="container">
-        <div class="flex flex-col items-center justify-center min-h-96 pt-12 pb-12 gap-16">
+        <div class="flex flex-col items-center justify-center min-h-96 pt-12 pb-12 gap-16 max-lg:min-h-64 max-lg:pt-6 max-lg:pb-6 max-lg:gap-8">
           <h1 class="header-section__title"><?php the_title(); ?></h1>
           <?php if ($crb_slogan = carbon_get_the_post_meta('crb_slogan')): ?>
             <div class="header-section__desc">
@@ -32,7 +32,7 @@ Template Name: Главная
     <div class="relative z-30">
       <section class="section-about">
         <div class="container">
-          <div class="bg-white rounded p-12">
+          <div class="bg-white rounded p-12 max-lg:p-5">
             <div class="section-about__video">
               <div class="section-about__video-slogan">
                 <img src="<?php bloginfo('template_url'); ?>/src/images/video-slogan.png" alt="Баня строить и жить помогает">
