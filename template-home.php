@@ -283,7 +283,12 @@ Template Name: Главная
                 <label class="feedback__rules">
                   <input type="checkbox" name="approve" value="1" checked>
                   <span></span>
-                  Прочитал(-а) соглашаюсь с <a href="<?php the_permalink(3); ?>">политикой обработки персональных данных</a>
+                  Прочитал(-а) соглашаюсь с
+                  <?php if ($crb_agreement_page = carbon_get_theme_option('crb_agreement_page')): ?>
+                    <a href="<?php the_permalink($crb_agreement_page[0]['id']) ?>">политикой обработки персональных данных</a>
+                  <?php else: ?>
+                    политикой обработки персональных данных
+                  <?php endif; ?>
                 </label>
 
                 <button type="submit" class="feedback__submit">

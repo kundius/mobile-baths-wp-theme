@@ -1,14 +1,16 @@
 <section class="sticky-footer">
-  <button type="button" class="sticky-footer__feedback" data-order-button>Заказать обратный звонок</button>
-  <div class="sticky-footer__contacts">
-    <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone') ?>" class="sticky-footer__phone">
-      <span><?php icon('phone', 12) ?></span>
-      <?php echo carbon_get_theme_option('crb_theme_phone') ?>
-    </a>
-    <a href="mail:<?php echo carbon_get_theme_option('crb_theme_email') ?>" class="sticky-footer__email">
-      <span><?php icon('mail', 12) ?></span>
-      <?php echo carbon_get_theme_option('crb_theme_email') ?>
-    </a>
+  <div class="container sticky-footer__container">
+    <button type="button" class="sticky-footer__feedback" data-order-button>Заказать обратный звонок</button>
+    <div class="sticky-footer__contacts">
+      <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone') ?>" class="sticky-footer__phone">
+        <span><?php icon('phone', 12) ?></span>
+        <?php echo carbon_get_theme_option('crb_theme_phone') ?>
+      </a>
+      <a href="mail:<?php echo carbon_get_theme_option('crb_theme_email') ?>" class="sticky-footer__email">
+        <span><?php icon('mail', 12) ?></span>
+        <?php echo carbon_get_theme_option('crb_theme_email') ?>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -76,9 +78,12 @@
     <div class="footer-counters"><?php echo carbon_get_theme_option('crb_theme_counters') ?></div>
 
     <div class="footer-links">
-      <a href="<?php the_permalink(152) ?>">Карта сайта</a>
-      <a href="<?php the_permalink(3) ?>">Политика конфиденциальности</a>
-      <!-- <a href="<?php the_permalink(154) ?>">Пользовательское соглашение</a> -->
+      <?php if ($crb_sitemap_page = carbon_get_theme_option('crb_sitemap_page')): ?>
+        <a href="<?php the_permalink($crb_sitemap_page[0]['id']) ?>">Карта сайта</a>
+      <?php endif; ?>
+      <?php if ($crb_agreement_page = carbon_get_theme_option('crb_agreement_page')): ?>
+        <a href="<?php the_permalink($crb_agreement_page[0]['id']) ?>">Политика конфиденциальности</a>
+      <?php endif; ?>
     </div>
 
     <a href="https://domenart-studio.ru/" target="_blank" class="footer-creator">
@@ -128,7 +133,14 @@
             <label class="feedback-rules">
               <input class="feedback-rules__input" type="checkbox" name="approve" value="1" checked>
               <span class="feedback-rules__check"></span>
-              <span class="feedback-rules__text">Прочитал(-а) соглашаюсь с <a href="<?php the_permalink(3); ?>">политикой обработки персональных данных</a></span>
+              <span class="feedback-rules__text">
+                Прочитал(-а) соглашаюсь с
+                <?php if ($crb_agreement_page = carbon_get_theme_option('crb_agreement_page')): ?>
+                  <a href="<?php the_permalink($crb_agreement_page[0]['id']) ?>">политикой обработки персональных данных</a>
+                <?php else: ?>
+                  политикой обработки персональных данных
+                <?php endif; ?>
+              </span>
             </label>
           </div>
         </form>
@@ -178,7 +190,14 @@
             <label class="feedback-rules">
               <input class="feedback-rules__input" type="checkbox" name="approve" value="1" checked>
               <span class="feedback-rules__check"></span>
-              <span class="feedback-rules__text">Прочитал(-а) соглашаюсь с <a href="<?php the_permalink(3); ?>">политикой обработки персональных данных</a></span>
+              <span class="feedback-rules__text">
+                Прочитал(-а) соглашаюсь с
+                <?php if ($crb_agreement_page = carbon_get_theme_option('crb_agreement_page')): ?>
+                  <a href="<?php the_permalink($crb_agreement_page[0]['id']) ?>">политикой обработки персональных данных</a>
+                <?php else: ?>
+                  политикой обработки персональных данных
+                <?php endif; ?>
+              </span>
             </label>
           </div>
         </form>

@@ -43,6 +43,24 @@ function register_carbon_fields()
             'type' => 'post',
             'post_type' => 'page',
           ]
+        ]),
+      Field::make('association', 'crb_sitemap_page', 'Страница карта сайта')
+        ->set_max(1)
+        ->set_min(1)
+        ->set_types([
+          [
+            'type' => 'post',
+            'post_type' => 'page',
+          ]
+        ]),
+      Field::make('association', 'crb_agreement_page', 'Страница пользовательское соглашение')
+        ->set_max(1)
+        ->set_min(1)
+        ->set_types([
+          [
+            'type' => 'post',
+            'post_type' => 'page',
+          ]
         ])
 
     ]);
