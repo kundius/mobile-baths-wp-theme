@@ -163,10 +163,6 @@
   [data-sticky-header='active'] & {
     color: #605447;
   }
-
-  @include max-xl {
-    font-size: 13px;
-  }
 }
 
 .header__menu > ul > li.current-menu-item > a {
