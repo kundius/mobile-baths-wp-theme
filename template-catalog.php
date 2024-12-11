@@ -18,7 +18,7 @@ Template Name: Каталог
 
     <section class="header-section">
       <div class="container">
-        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7">
+        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8">
           <div class="header-section__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <span property="itemListElement" typeof="ListItem">
               <a property="item" typeof="WebPage" title="Перейти к Главная" href="/">
@@ -43,85 +43,83 @@ Template Name: Каталог
     <div class="grow z-30">
       <div class="container">
         <div class="bg-white rounded p-5">
-          <?php get_template_part('partials/banner'); ?>
-        </div>
-
-        <?php $categories = get_terms('project_category', [
-          'hide_empty' => true,
-        ]); ?>
-        <?php foreach ($categories as $category): ?>
-          <div class="my-16">
-            <?php
-            $projects = new WP_Query([
-              'post_type' => 'project',
-              'orderby' => [
-                'is_sticky' => 'DESC',
-                'date' => 'DESC',
-              ],
-              'posts_per_page' => -1,
-              'meta_query' => [
-                [
-                  'key' => 'crb_is_sticky',
-                  'value' => 'yes'
+          <?php $categories = get_terms('project_category', [
+            'hide_empty' => true,
+          ]); ?>
+          <?php foreach ($categories as $category): ?>
+            <div class="my-16">
+              <?php
+              $projects = new WP_Query([
+                'post_type' => 'project',
+                'orderby' => [
+                  'is_sticky' => 'DESC',
+                  'date' => 'DESC',
+                ],
+                'posts_per_page' => -1,
+                'meta_query' => [
+                  [
+                    'key' => 'crb_is_sticky',
+                    'value' => 'yes'
+                  ]
+                ],
+                'tax_query' => [
+                  [
+                    'taxonomy' => $category->taxonomy,
+                    'field' => 'term_id',
+                    'terms' => $category->term_id
+                  ]
                 ]
-              ],
-              'tax_query' => [
-                [
-                  'taxonomy' => $category->taxonomy,
-                  'field' => 'term_id',
-                  'terms' => $category->term_id
-                ]
-              ]
-            ]); ?>
-            <div class="category-headline">
-              <div class="category-headline__title"><?php echo $category->name ?></div>
-              <a href="<?php echo get_term_link($category->term_id, $category->taxonomy); ?>" class="category-headline__all">Смотреть все<span></span></a>
-            </div>
-            <div class="grid grid-cols-3 gap-x-6 gap-y-3 mt-6">
-              <?php while ($projects->have_posts()): ?>
-                <?php $projects->the_post(); ?>
-                <article class="project-card">
-                  <figure class="project-card__image">
-                    <?php the_post_thumbnail('archive') ?>
-                    <div class="project-flags">
-                      <?php if ($crb_bestprice = carbon_get_the_post_meta('crb_bestprice')): ?>
-                        <div class="project-flags__bestprice">Лучшая цена</div>
-                      <?php endif; ?>
-                      <?php if ($crb_new = carbon_get_the_post_meta('crb_new')): ?>
-                        <div class="project-flags__new">Новинка</div>
-                      <?php endif; ?>
-                      <?php if ($crb_action = carbon_get_the_post_meta('crb_action')): ?>
-                        <div class="project-flags__action">Акция</div>
-                      <?php endif; ?>
-                    </div>
-                  </figure>
-                  <div class="project-card__title"><?php the_title() ?></div>
-                  <div class="flex items-center justify-between mt-8">
-                    <?php if ($crb_area = carbon_get_the_post_meta('crb_area')): ?>
-                      <div class="project-card__area">
-                        <div class="project-card__area-label">Площадь</div>
-                        <div class="project-card__area-value"><?php echo number_format($crb_area, 1, ',', ' '); ?> <span>м<sup>2</sup></span></div>
+              ]); ?>
+              <div class="category-headline">
+                <div class="category-headline__title"><?php echo $category->name ?></div>
+                <a href="<?php echo get_term_link($category->term_id, $category->taxonomy); ?>" class="category-headline__all">Смотреть все<span></span></a>
+              </div>
+              <div class="grid grid-cols-3 gap-x-6 gap-y-3 mt-6 max-lg:grid-cols-2">
+                <?php while ($projects->have_posts()): ?>
+                  <?php $projects->the_post(); ?>
+                  <article class="project-card">
+                    <figure class="project-card__image">
+                      <?php the_post_thumbnail('archive') ?>
+                      <div class="project-flags">
+                        <?php if ($crb_bestprice = carbon_get_the_post_meta('crb_bestprice')): ?>
+                          <div class="project-flags__bestprice">Лучшая цена</div>
+                        <?php endif; ?>
+                        <?php if ($crb_new = carbon_get_the_post_meta('crb_new')): ?>
+                          <div class="project-flags__new">Новинка</div>
+                        <?php endif; ?>
+                        <?php if ($crb_action = carbon_get_the_post_meta('crb_action')): ?>
+                          <div class="project-flags__action">Акция</div>
+                        <?php endif; ?>
                       </div>
-                    <?php endif; ?>
-                    <div class="project-card__price">
-                      <?php if ($crb_oldprice = carbon_get_the_post_meta('crb_oldprice')): ?>
-                        <div class="project-card__price-old"><?php echo number_format($crb_oldprice, 0, ',', ' '); ?> <span>₽</span></div>
+                    </figure>
+                    <div class="project-card__title"><?php the_title() ?></div>
+                    <div class="flex items-center justify-between mt-8">
+                      <?php if ($crb_area = carbon_get_the_post_meta('crb_area')): ?>
+                        <div class="project-card__area">
+                          <div class="project-card__area-label">Площадь</div>
+                          <div class="project-card__area-value"><?php echo number_format($crb_area, 1, ',', ' '); ?> <span>м<sup>2</sup></span></div>
+                        </div>
                       <?php endif; ?>
-                      <?php if ($crb_price = carbon_get_the_post_meta('crb_price')): ?>
-                        <div class="project-card__price-current"><?php echo number_format($crb_price, 0, ',', ' '); ?> <span>₽</span></div>
-                      <?php endif; ?>
+                      <div class="project-card__price">
+                        <?php if ($crb_oldprice = carbon_get_the_post_meta('crb_oldprice')): ?>
+                          <div class="project-card__price-old"><?php echo number_format($crb_oldprice, 0, ',', ' '); ?> <span>₽</span></div>
+                        <?php endif; ?>
+                        <?php if ($crb_price = carbon_get_the_post_meta('crb_price')): ?>
+                          <div class="project-card__price-current"><?php echo number_format($crb_price, 0, ',', ' '); ?> <span>₽</span></div>
+                        <?php endif; ?>
+                      </div>
                     </div>
-                  </div>
-                  <div class="flex items-center justify-between mt-5">
-                    <button type="button" class="project-card__order" data-order-button="<?php the_title() ?>">Заказать</button>
-                    <a href="<?php the_permalink() ?>" class="project-card__details">Проект подробнее</a>
-                  </div>
-                </article>
-              <?php endwhile; ?>
-              <?php wp_reset_postdata(); ?>
+                    <div class="flex items-center justify-between mt-5">
+                      <button type="button" class="project-card__order" data-order-button="<?php the_title() ?>">Заказать</button>
+                      <a href="<?php the_permalink() ?>" class="project-card__details">Проект подробнее</a>
+                    </div>
+                  </article>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+              </div>
             </div>
-          </div>
-        <?php endforeach; ?>
+          <?php endforeach; ?>
+        </div>
 
         <div class="my-24 content">
           <?php the_content(); ?>

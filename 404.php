@@ -1,44 +1,36 @@
 <!DOCTYPE html>
-<html class="no-js" <?php language_attributes() ?> itemscope itemtype="http://schema.org/WebSite">
-  <head>
-    <?php get_template_part('partials/head') ?>
-  </head>
-  <body <?php body_class('page-404-body') ?>>
-    <?php wp_body_open() ?>
-  
-    <div class="page-404-main">
-      <div class="ui-container">
-        <div class="page-404-header">
-          <div class="page-404-header__logo">
-            <a href="/">
-              <img src="<?php bloginfo('template_url') ?>/dist/images/logo.png" alt="<?php bloginfo('name') ?>" class="page-404-header__logo-image" />
-            </a>
-            <span class="page-404-header__logo-desc">ремонт    строительство    аренда</span>
-          </div>
-          <div class="page-404-header__desc">
-            Ремонт и аренда опалубки<br />
-            в Санкт-Петербурге и Ленинградской области
-          </div>
+<html <?php language_attributes(); ?> itemscope itemtype="http://schema.org/WebSite">
+
+<head>
+  <?php get_template_part('partials/head'); ?>
+</head>
+
+<body <?php body_class(); ?>>
+  <?php wp_body_open(); ?>
+
+  <div class="flex flex-col min-h-screen">
+    <?php get_template_part('partials/header'); ?>
+
+    <section class="header-section">
+      <div class="container">
+        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8">
+          <h1 class="header-section__page-title">
+            Страница не найдена
+          </h1>
         </div>
-        <div class="page-404-code">
-          <div class="page-404-code__number">404</div>
-          <div class="page-404-code__desc">Страница не&nbsp;найдена</div>
-        </div>
-        <div class="page-404-desc">
-          Возможно, она была перемещена или удалена.<br />
-          Вы можете попробовать ещё раз с <a href="/">главной</a>, ознакомиться с <a href="<?php the_permalink(52) ?>">видами ремонта</a>  или  <a data-hystmodal="#modal-feedback">сообщить нам</a> о своей проблеме.
-        </div>
-        <div class="page-404-phone">
-          <div class="page-404-phone__label">Звоните:</div>
-          <a href="tel:<?php the_field('theme_phone', 'options') ?>" class="page-404-phone__number">
-            <?php the_field('theme_phone', 'options') ?>
-          </a>
+      </div>
+    </section>
+
+    <div class="grow z-30">
+      <div class="container">
+        <div class="bg-white rounded p-5 mb-24 content">
+          Возможно, она была перемещена или удалена.
         </div>
       </div>
     </div>
 
-    <?php get_template_part('partials/modals') ?>
+    <?php get_template_part('partials/footer'); ?>
+  </div>
+</body>
 
-    <?php wp_footer() ?>
-  </body>
 </html>

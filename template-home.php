@@ -81,7 +81,7 @@ Template Name: Главная
               <div class="category-headline__title"><?php echo $category->name ?></div>
               <a href="<?php echo get_term_link($category->term_id, $category->taxonomy); ?>" class="category-headline__all">Смотреть все<span></span></a>
             </div>
-            <div class="grid grid-cols-3 gap-x-6 gap-y-3 mt-6">
+            <div class="grid grid-cols-3 gap-x-6 gap-y-3 mt-6 max-lg:grid-cols-2">
               <?php while ($projects->have_posts()): ?>
                 <?php $projects->the_post(); ?>
                 <article class="project-card">
@@ -149,7 +149,7 @@ Template Name: Главная
               <div class="works-section__headline-title">Наши работы</div>
               <a href="<?php echo the_permalink(63); ?>" class="works-section__headline-all">Смотреть все<span></span></a>
             </div>
-            <div class="grid grid-cols-4 gap-x-6 gap-y-10 mt-8">
+            <div class="grid grid-cols-4 gap-x-6 gap-y-10 mt-8 max-lg:grid-cols-3">
               <?php while ($works->have_posts()): ?>
                 <?php $works->the_post(); ?>
                 <article class="work-card">

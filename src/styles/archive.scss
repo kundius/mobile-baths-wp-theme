@@ -1,3 +1,5 @@
+@import 'variables';
+
 .archive-card {
   border-radius: 4px;
   background-color: rgb(255, 255, 255);
@@ -70,6 +72,11 @@
   line-height: 1.2;
   margin-top: 40px;
   font-weight: 500;
+
+  @include max-lg {
+    font-size: 24px;
+    margin-top: 16px;
+  }
 }
 
 .archive-card__excerpt {
@@ -78,11 +85,20 @@
   line-height: 1.5;
   margin-top: 24px;
   font-weight: 500;
+
+  @include max-lg {
+    font-size: 14px;
+    margin-top: 16px;
+  }
 }
 
 .archive-card__more {
   margin-top: 28px;
   display: flex;
+
+  @include max-lg {
+    margin-top: 16px;
+  }
 }
 
 .archive-card__more a {

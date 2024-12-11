@@ -1,7 +1,10 @@
+@import 'variables';
+
 .section-schema {
   background: url('../images/schema-bg.jpg') no-repeat 50% 50%;
   padding-top: 62px;
   padding-bottom: 45px;
+  background-size: cover;
 }
 
 .section-schema__title {
@@ -12,12 +15,22 @@
   color: #ffffff;
   font-weight: 700;
   text-align: center;
+
+  @include max-lg {
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 48px;
+  }
 }
 
 .section-schema__items {
   display: grid;
   grid-template-columns: auto auto auto auto auto 112px;
   gap: 48px;
+
+  @include max-lg {
+    gap: 16px;
+  }
 }
 
 .schema-card {
@@ -49,6 +62,12 @@
   align-items: center;
   justify-content: center;
   color: #fff;
+
+  @include max-lg {
+    img {
+      transform: scale(0.8, 0.8);
+    }
+  }
 }
 
 .schema-card__dot {

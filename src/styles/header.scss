@@ -450,4 +450,8 @@
   line-height: 1;
   color: #ffffff;
   font-weight: 300;
+
+  @include max-lg {
+    font-size: 32px;
+  }
 }
