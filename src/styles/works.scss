@@ -321,6 +321,7 @@
   border-radius: 12px;
   background-image: linear-gradient(45deg, #edf1fd 0%, #f9edfb 100%);
   padding: 20px 32px;
+  width: 100%;
 
   @include max-md {
     padding: 20px;
