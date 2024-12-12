@@ -43,7 +43,8 @@ function ajax_action_feedback()
       $body[] = 'Сообщение: ' . sanitize_text_field($_POST['your-message']);
     }
     $body = implode("\n", $rows);
-    $headers = 'From: ' . get_bloginfo('name') . ' <' . $email_to . '>' . "\r\n" . 'Reply-To: ' . $email_to;
+    $headers = '';
+    // $headers .= 'From: ' . get_bloginfo('name') . ' <' . $email_to . '>' . "\r\n" . 'Reply-To: ' . $email_to;
 
     $subject = 'Обратная связь';
     if (!empty($_POST['your-subject'])) {
