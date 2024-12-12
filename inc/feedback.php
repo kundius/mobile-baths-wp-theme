@@ -26,7 +26,7 @@ function ajax_action_feedback()
   if ($errors) {
     wp_send_json_error($errors);
   } else {
-    $email_to = 'kundius.ruslan@gmail.com';
+    $email_to = '';
 
     if (!$email_to) {
       $email_to = get_option('admin_email');
