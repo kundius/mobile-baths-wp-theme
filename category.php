@@ -39,7 +39,7 @@ $pagination = [
 
     <section class="header-section">
       <div class="container">
-        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8">
+        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8 max-md:pt-4 max-md:pb-6 max-md:gap-2">
           <div class="header-section__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <span property="itemListElement" typeof="ListItem">
               <a property="item" typeof="WebPage" title="Перейти к Главная" href="/">
@@ -113,7 +113,7 @@ $pagination = [
           <p>Извините, ничего не найдено.</p>
         <?php endif ?>
 
-        <div class="my-20"><?php echo term_description() ?></div>
+        <div class="my-20 content"><?php echo term_description() ?></div>
 
         <div class="my-20">
           <?php get_template_part('partials/feedback'); ?>

@@ -18,7 +18,7 @@ Template Name: Каталог
 
     <section class="header-section">
       <div class="container">
-        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8">
+        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8 max-md:pt-4 max-md:pb-6 max-md:gap-2">
           <div class="header-section__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <span property="itemListElement" typeof="ListItem">
               <a property="item" typeof="WebPage" title="Перейти к Главная" href="/">
@@ -42,12 +42,12 @@ Template Name: Каталог
 
     <div class="grow z-30">
       <div class="container">
-        <div class="bg-white rounded p-5">
+        <div class="bg-white rounded p-5 space-y-16">
           <?php $categories = get_terms('project_category', [
             'hide_empty' => true,
           ]); ?>
           <?php foreach ($categories as $category): ?>
-            <div class="my-16">
+            <div>
               <?php
               $projects = new WP_Query([
                 'post_type' => 'project',
@@ -72,9 +72,9 @@ Template Name: Каталог
               ]); ?>
               <div class="category-headline">
                 <div class="category-headline__title"><?php echo $category->name ?></div>
-                <a href="<?php echo get_term_link($category->term_id, $category->taxonomy); ?>" class="category-headline__all">Смотреть все<span></span></a>
+                <a href="<?php echo get_term_link($category->term_id, $category->taxonomy); ?>" class="category-headline__all"><span>Смотреть все</span><span></span></a>
               </div>
-              <div class="grid grid-cols-3 gap-x-6 gap-y-3 mt-6 max-lg:grid-cols-2">
+              <div class="grid grid-cols-3 gap-x-6 gap-y-3 mt-6 max-lg:grid-cols-2 max-md:grid-cols-1">
                 <?php while ($projects->have_posts()): ?>
                   <?php $projects->the_post(); ?>
                   <article class="project-card">

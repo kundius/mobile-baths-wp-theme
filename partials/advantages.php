@@ -1,6 +1,6 @@
 <div class="advantages">
   <div class="advantages__title">Почему мы</div>
-  <div class="grid grid-cols-6 gap-x-4 gap-y-4 mt-10 max-lg:grid-cols-3">
+  <div class="grid grid-cols-6 gap-x-4 gap-y-4 mt-10 max-lg:grid-cols-3 max-md:grid-cols-2 max-md:mt-6">
     <article class="advantage-card">
       <div class="advantage-card__media">
         <div class="advantage-card__media-circle"></div>

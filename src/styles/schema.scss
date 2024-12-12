@@ -5,6 +5,7 @@
   padding-top: 62px;
   padding-bottom: 45px;
   background-size: cover;
+  overflow: hidden;
 }
 
 .section-schema__title {
@@ -21,6 +22,10 @@
     line-height: 1;
     margin-bottom: 48px;
   }
+  @include max-md {
+    font-size: 24px;
+    margin-bottom: 36px;
+  }
 }
 
 .section-schema__items {
@@ -30,6 +35,9 @@
 
   @include max-lg {
     gap: 16px;
+  }
+  @include max-md {
+    grid-template-columns: auto auto;
   }
 }
 

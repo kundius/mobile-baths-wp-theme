@@ -13,7 +13,7 @@
 
     <section class="header-section">
       <div class="container">
-        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8">
+        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8 max-md:pt-4 max-md:pb-6 max-md:gap-2">
           <?php $position = 0; ?>
           <div class="header-section__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <span property="itemListElement" typeof="ListItem">
@@ -57,7 +57,7 @@
     <div class="grow z-30">
       <div class="container">
         <div class="bg-white rounded-xl p-5 shadow-main">
-          <div class="flex gap-5">
+          <div class="flex gap-5 max-lg:flex-col">
             <div class="w-full flex">
               <?php if ($gallery = carbon_get_the_post_meta('crb_gallery')): ?>
                 <div class="gallery" data-gallery>
@@ -110,7 +110,7 @@
               <?php endif; ?>
             </div>
 
-            <div class="w-80 shrink-0 flex flex-col gap-2">
+            <div class="w-80 shrink-0 flex flex-col gap-2 max-lg:w-full">
               <div class="grow flex">
                 <div class="project-details">
                   <div class="project-details__title">Стоимость бани</div>

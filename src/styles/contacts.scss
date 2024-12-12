@@ -30,6 +30,10 @@
   color: #000000;
   font-weight: 700;
   line-height: 24px;
+
+  @include max-md {
+    font-size: 16px;
+  }
 }
 
 .contacts-phone__desc {
@@ -67,6 +71,11 @@
   span {
     color: #999999;
   }
+
+  @include max-md {
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 .contacts-additional {
@@ -102,18 +111,30 @@
   display: flex;
   align-items: center;
   gap: 20px;
+
+  @include max-md {
+    gap: 12px;
+  }
 }
 
 .contacts-social__title {
   font-size: 16px;
   line-height: 1;
   color: #000000;
+
+  @include max-md {
+    font-size: 14px;
+  }
 }
 
 .contacts-social__items {
   display: flex;
   align-items: center;
   gap: 20px;
+
+  @include max-md {
+    gap: 4px;
+  }
 }
 
 .contacts-social__item {
@@ -123,6 +144,12 @@
   background-size: 48px 48px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+
+  @include max-md {
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+  }
 }
 
 .contacts-social__item-vk {
@@ -149,11 +176,15 @@
     flex-direction: column;
     gap: 36px;
   }
+  @include max-md {
+    padding: 32px 20px;
+  }
 }
 
 .contacts-feedback__headline {
   width: 320px;
   flex-shrink: 0;
+  max-width: 100%;
 }
 
 .contacts-feedback__headline-title {
@@ -207,6 +238,10 @@
   display: flex;
   justify-content: center;
   padding: 20px 0;
+
+  @include max-md {
+    padding: 12px 0;
+  }
 }
 
 .contacts-feedback__submit {

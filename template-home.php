@@ -18,7 +18,7 @@ Template Name: Главная
 
     <section class="header-section header-section_landing">
       <div class="container">
-        <div class="flex flex-col items-center justify-center min-h-96 pt-12 pb-12 gap-16 max-lg:min-h-64 max-lg:pt-6 max-lg:pb-6 max-lg:gap-8">
+        <div class="flex flex-col items-center justify-center min-h-96 pt-12 pb-12 gap-16 max-lg:min-h-64 max-lg:pt-6 max-lg:pb-6 max-lg:gap-8 max-md:min-h-48 max-md:pt-4 max-md:pb-4 max-md:gap-6">
           <h1 class="header-section__title"><?php the_title(); ?></h1>
           <?php if ($crb_slogan = carbon_get_the_post_meta('crb_slogan')): ?>
             <div class="header-section__desc">
@@ -79,9 +79,9 @@ Template Name: Главная
             ]); ?>
             <div class="category-headline">
               <div class="category-headline__title"><?php echo $category->name ?></div>
-              <a href="<?php echo get_term_link($category->term_id, $category->taxonomy); ?>" class="category-headline__all">Смотреть все<span></span></a>
+              <a href="<?php echo get_term_link($category->term_id, $category->taxonomy); ?>" class="category-headline__all"><span>Смотреть все</span><span></span></a>
             </div>
-            <div class="grid grid-cols-3 gap-x-6 gap-y-3 mt-6 max-lg:grid-cols-2">
+            <div class="grid grid-cols-3 gap-x-6 gap-y-3 mt-6 max-lg:grid-cols-2 max-md:grid-cols-1">
               <?php while ($projects->have_posts()): ?>
                 <?php $projects->the_post(); ?>
                 <article class="project-card">
@@ -147,9 +147,9 @@ Template Name: Главная
           <div class="container">
             <div class="works-section__headline">
               <div class="works-section__headline-title">Наши работы</div>
-              <a href="<?php echo the_permalink(63); ?>" class="works-section__headline-all">Смотреть все<span></span></a>
+              <a href="<?php echo the_permalink(63); ?>" class="works-section__headline-all"><span>Смотреть все</span><span></span></a>
             </div>
-            <div class="grid grid-cols-4 gap-x-6 gap-y-10 mt-8 max-lg:grid-cols-3">
+            <div class="grid grid-cols-4 gap-x-6 gap-y-10 mt-8 max-lg:grid-cols-3 max-md:grid-cols-2 max-md:gap-x-4 max-md:gap-y-8 max-md:mt-6">
               <?php while ($works->have_posts()): ?>
                 <?php $works->the_post(); ?>
                 <article class="work-card">
@@ -240,8 +240,8 @@ Template Name: Главная
         <div class="container">
           <div class="section-add__title">Мобильные бани</div>
           <div class="section-add__desc">Вы находитесь на сайте компании производителя мобильных бань:</div>
-          <div class="flex items-center mt-16">
-            <div class="w-1/2">
+          <div class="flex items-center mt-16 max-md:flex-col max-md:mt-12 max-md:gap-12">
+            <div class="w-1/2 max-md:w-full">
               <div class="add-text">
                 <div class="add-text__title">Тем, кто ищет подрядчика</div>
                 <ul class="add-text__list">
@@ -259,7 +259,7 @@ Template Name: Главная
                 </div>
               </div>
             </div>
-            <div class="w-1/2 xl:px-12">
+            <div class="w-1/2 xl:px-12 max-md:w-full">
               <form action="<?php echo admin_url('admin-ajax.php') ?>" class="feedback" data-feedack-form>
                 <input type="hidden" name="submitted" value="">
                 <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">

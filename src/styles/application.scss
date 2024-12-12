@@ -9,6 +9,12 @@
     padding-right: 40px;
     padding-top: 60px;
   }
+  @include max-lg {
+    padding: 36px;
+  }
+  @include max-md {
+    padding: 20px;
+  }
 }
 
 .application__title {
@@ -23,6 +29,14 @@
     font-size: 28px;
     line-height: 36px;
   }
+  @include max-lg {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  @include max-md {
+    font-size: 24px;
+    line-height: 1.25;
+  }
 }
 
 .application__layout {
@@ -32,16 +46,33 @@
   @include max-xl {
     gap: 64px;
   }
+  @include max-lg {
+    gap: 32px;
+  }
+  @include max-md {
+    flex-direction: column;
+  }
 }
 
 .application__layout-profile {
   flex-grow: 1;
   padding-top: 60px;
+
+  @include max-md {
+    padding-top: 20px;
+  }
 }
 
 .application__layout-form {
   width: 294px;
   flex-shrink: 0;
+
+  @include max-lg {
+    width: 260px;
+  }
+  @include max-md {
+    width: 100%;
+  }
 }
 
 .application__profile {
@@ -59,6 +90,15 @@
   position: absolute;
   left: 7px;
   top: -11px;
+
+  @include max-lg {
+    width: 180px;
+    height: 180px;
+  }
+  @include max-md {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .application__profile-name {
@@ -67,6 +107,15 @@
   color: #000000;
   font-weight: 700;
   margin-left: 264px;
+
+  @include max-lg {
+    font-size: 16px;
+    margin-left: 180px;
+  }
+  @include max-md {
+    font-size: 14px;
+    margin-left: 96px;
+  }
 }
 
 .application__profile-stat {
@@ -79,6 +128,18 @@
   background: #ef8b5d;
   margin-left: 322px;
   margin-top: 8px;
+
+  @include max-lg {
+    font-size: 10px;
+    line-height: 24px;
+    padding: 0 8px;
+    border-radius: 14px;
+    margin-left: 192px;
+    margin-top: 8px;
+  }
+  @include max-md {
+    margin-left: 96px;
+  }
 }
 
 .application__profile-desc {
@@ -87,6 +148,17 @@
   color: #5a5a5a;
   margin-left: 332px;
   margin-top: 26px;
+
+  @include max-lg {
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: 204px;
+    margin-top: 16px;
+  }
+  @include max-md {
+    margin-left: 0;
+    margin-top: 24px;
+  }
 }
 
 .application__form {
@@ -128,10 +200,18 @@
   display: flex;
   justify-content: center;
   padding: 10px 0 32px;
+
+  @include max-lg {
+    padding-bottom: 10px;
+  }
 }
 
 .application__form-rules {
   margin-left: -30px;
+
+  @include max-md {
+    margin-left: 0;
+  }
 }
 
 .application__label {

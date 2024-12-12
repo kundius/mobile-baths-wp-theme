@@ -5,12 +5,22 @@
   align-items: center;
   gap: 48px;
   grid-template-columns: 4fr 6fr;
+
+  @include max-md {
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
 }
 
 .section-about__video-slogan {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @include max-md {
+    max-width: 200px;
+    justify-self: flex-end;
+  }
 }
 
 .section-about__video-player {
@@ -38,6 +48,10 @@
     font-size: 16px;
     line-height: 1.5;
   }
+  @include max-md {
+    margin-top: 32px;
+    font-size: 14px;
+  }
 }
 
 .section-warranty {
@@ -53,6 +67,9 @@
   @include max-xl {
     min-height: 120px;
   }
+  @include max-md {
+    padding: 20px;
+  }
 }
 
 .section-warranty::before {
@@ -65,6 +82,10 @@
   left: 28px;
   top: 50%;
   transform: translateY(-50%);
+
+  @include max-md {
+    display: none;
+  }
 }
 
 .section-warranty::after {
@@ -78,6 +99,10 @@
   left: 46px;
   top: 50%;
   margin-top: -5px;
+
+  @include max-md {
+    display: none;
+  }
 }
 
 .section-warranty-title {
@@ -112,6 +137,10 @@
   color: #605447;
   font-weight: 700;
   text-align: center;
+
+  @include max-md {
+    font-size: 24px;
+  }
 }
 
 .section-add__desc {

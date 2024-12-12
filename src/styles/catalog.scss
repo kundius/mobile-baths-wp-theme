@@ -5,6 +5,10 @@
   border-radius: 12px;
   background-image: linear-gradient(45deg, #edf1fd 0%, #f9edfb 100%);
   overflow: hidden;
+
+  @include max-md {
+    padding: 20px;
+  }
 }
 
 .gallery-main {
@@ -12,6 +16,12 @@
   --carousel-columns: 1;
 
   position: relative;
+}
+
+.gallery-main .project-flags {
+  @include max-md {
+    font-size: 80%;
+  }
 }
 
 .gallery-main__viewport {
@@ -91,6 +101,11 @@
     transform: rotate(45deg);
     display: block;
   }
+  @include max-md {
+    margin-top: -18px;
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .gallery-main__next {
@@ -124,6 +139,11 @@
     transform: rotate(-45deg);
     display: block;
   }
+  @include max-md {
+    margin-top: -18px;
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .gallery-thumbs {
@@ -132,6 +152,11 @@
 
   position: relative;
   margin-top: 20px;
+
+  @include max-md {
+    --carousel-columns: 3;
+    --carousel-gap: 8px;
+  }
 }
 
 .gallery-thumbs__viewport {
@@ -252,15 +277,23 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  
+  @include max-md {
+    padding: 20px;
+  }
 }
 
 .project-details__title {
   font-size: 24px;
   color: #2a2a2a;
-
   font-weight: 700;
   line-height: 1;
   margin-bottom: 32px;
+  
+  @include max-md {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
 }
 
 .project-details__price {
@@ -285,6 +318,10 @@
   font-weight: 700;
   span {
     font-size: 24px;
+  }
+  
+  @include max-md {
+    font-size: 32px;
   }
 }
 
@@ -420,6 +457,10 @@
   padding: 24px 30px;
   border-radius: 12px;
   background-image: linear-gradient(45deg, #edf1fd, #f9edfb);
+
+  @include max-md {
+    padding: 20px;
+  }
 }
 
 .project-prepay__title {
@@ -453,6 +494,10 @@
   padding: 20px 30px;
   border-radius: 12px;
   background-image: linear-gradient(45deg, #edf1fd, #f9edfb);
+
+  @include max-md {
+    padding: 20px;
+  }
 }
 
 .project-changes__title {

@@ -6,6 +6,10 @@
   gap: 36px;
   padding-bottom: 24px;
   border-bottom: 1px solid #f2f5fa;
+
+  @include max-md {
+    gap: 24px;
+  }
 }
 
 .category-headline__title {
@@ -14,9 +18,9 @@
   color: #605447;
   font-weight: 700;
 
-  // @include max-lg {
-  //   font-size: 24px;
-  // }
+  @include max-md {
+    font-size: 24px;
+  }
 }
 
 .category-headline__all {
@@ -31,7 +35,14 @@
   gap: 12px;
 }
 
-.category-headline__all span {
+.category-headline__all span:nth-child(1) {
+
+  @include max-md {
+    display: none;
+  }
+}
+
+.category-headline__all span:nth-child(2) {
   width: 32px;
   height: 32px;
   border: 2px solid #ebebeb;
@@ -40,7 +51,7 @@
   flex-shrink: 0;
 }
 
-.category-headline__all span::after {
+.category-headline__all span:nth-child(2)::after {
   content: '';
   width: 6px;
   height: 6px;
@@ -102,7 +113,7 @@
   }
 
   @include max-xl {
-    font-size: 90%;
+    font-size: 80%;
   }
 }
 
@@ -152,8 +163,7 @@
 .project-card__price-old {
   position: absolute;
   bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   font-size: calc(12em / 16);
   text-decoration: line-through;
   color: #666666;

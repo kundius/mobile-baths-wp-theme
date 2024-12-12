@@ -30,6 +30,9 @@
   @include max-lg {
     font-size: 48px;
   }
+  @include max-md {
+    font-size: 28px;
+  }
 }
 
 .header-section__desc {
@@ -43,6 +46,9 @@
 
   @include max-lg {
     font-size: 20px;
+  }
+  @include max-md {
+    font-size: 16px;
   }
 }
 
@@ -99,6 +105,12 @@
   @include max-xl {
     gap: 12px;
   }
+  @include max-md {
+    &.container {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
 }
 
 .header__logo {
@@ -117,6 +129,10 @@
     width: 180px;
     height: 45px;
   }
+  @include max-md {
+    width: 160px;
+    height: 40px;
+  }
 }
 
 .header__toggle {
@@ -129,6 +145,10 @@
 
   @include min-lg {
     display: none;
+  }
+  @include max-md {
+    order: -1;
+    margin-right: 0;
   }
 }
 
@@ -156,6 +176,10 @@
 
   [data-sticky-header='active'] & {
     color: #000;
+  }
+
+  @include max-md {
+    display: none;
   }
 }
 
@@ -316,7 +340,7 @@
     height: 48px;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
   }
 
   .header__menu {
@@ -333,7 +357,7 @@
     justify-content: center;
     padding: 32px;
 
-    [data-mobile-menu-state="closed"] & {
+    [data-mobile-menu-state='closed'] & {
       display: none;
     }
     // [data-mobile-menu-state="opened"] & {
@@ -346,7 +370,6 @@
     gap: 16px;
   }
   .header__menu > ul > li {
-
   }
   .header__menu > ul > li > a {
     font-size: 24px;
@@ -384,6 +407,17 @@
     height: 36px;
     font-size: 13px;
   }
+  @include max-md {
+    width: 36px;
+    padding: 0;
+    margin: 4px;
+  }
+}
+
+.header__callback-text {
+  @include max-md {
+    display: none;
+  }
 }
 
 .header__callback-icon {
@@ -401,6 +435,22 @@
 
   .header__callback:hover & {
     background: rgb(33, 161, 50);
+  }
+
+  @include max-md {
+    right: auto;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    color: #4e4528;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    width: 24px;
+    height: 24px;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 
@@ -453,5 +503,8 @@
 
   @include max-lg {
     font-size: 32px;
+  }
+  @include max-md {
+    font-size: 24px;
   }
 }

@@ -18,7 +18,7 @@ Template Name: Контакты
 
     <section class="header-section">
       <div class="container">
-        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8">
+        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8 max-md:pt-4 max-md:pb-6 max-md:gap-2">
           <div class="header-section__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <span property="itemListElement" typeof="ListItem">
               <a property="item" typeof="WebPage" title="Перейти к Главная" href="/">
@@ -42,9 +42,9 @@ Template Name: Контакты
 
     <div class="grow z-30">
       <div class="container">
-        <div class="bg-white rounded p-5 pb-24">
-          <div class="flex gap-16 mb-24 max-lg:flex-col max-lg:gap-8">
-            <div class="grow py-8 px-6">
+        <div class="bg-white rounded p-5">
+          <div class="flex gap-16 max-lg:flex-col max-lg:gap-8">
+            <div class="grow py-8 px-6 max-md:px-0 max-md:py-0">
               <div class="flex flex-col gap-10">
                 <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone'); ?>" class="contacts-phone">
                   <span class="contacts-phone__icon">
@@ -64,7 +64,7 @@ Template Name: Контакты
                     <div>
                       <span><strong>Пн - Сб</strong> : 09.00 - 20.00, <strong>Вс</strong> - выходной, без перерывов</span>
                     </div>
-                    
+
                     <div class="mt-6">
                       <?php echo carbon_get_theme_option('crb_theme_address') ?>
                     </div>
@@ -102,10 +102,12 @@ Template Name: Контакты
             </div>
 
             <div class="w-2/5 shrink-0 flex max-lg:w-full">
-              <div class="bg-sky-50 rounded-3xl grow w-full h-full max-lg:h-80"></div>
+              <div class="bg-sky-50 rounded-3xl grow w-full h-full max-lg:h-80 max-md:h-64 max-md:-mx-5"></div>
             </div>
           </div>
+        </div>
 
+        <div class="my-24">
           <?php get_template_part('partials/feedback'); ?>
         </div>
       </div>

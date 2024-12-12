@@ -6,9 +6,9 @@
   color: #605447;
   font-weight: 700;
 
-  // @include max-lg {
-  //   font-size: 24px;
-  // }
+  @include max-md {
+    font-size: 24px;
+  }
 }
 
 .advantage-card {

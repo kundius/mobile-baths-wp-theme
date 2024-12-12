@@ -16,7 +16,7 @@ $gallery = carbon_get_the_post_meta('crb_gallery');
 
     <section class="header-section">
       <div class="container">
-        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8">
+        <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8 max-md:pt-4 max-md:pb-6 max-md:gap-2">
           <?php $position = 0; ?>
           <div class="header-section__breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
             <span property="itemListElement" typeof="ListItem">
@@ -94,7 +94,7 @@ $gallery = carbon_get_the_post_meta('crb_gallery');
             </div>
           </div>
           <?php if ($gallery): ?>
-            <div class="work-gallery mt-5 grid grid-cols-6 gap-5 max-lg:grid-cols-5 max-lg:gap-3">
+            <div class="work-gallery mt-5 grid grid-cols-6 gap-5 max-lg:grid-cols-5 max-lg:gap-3 max-md:grid-cols-3 max-md:gap-2">
               <?php foreach ($gallery as $key => $id): ?>
                 <a
                   href="<?php echo wp_get_attachment_image_url($id, 'original') ?>"
