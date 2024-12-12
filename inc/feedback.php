@@ -53,7 +53,8 @@ function ajax_action_feedback()
 
     wp_mail($email_to, $subject, $body, $headers);
 
-    $message_success = 'Собщение отправлено. В&nbsp;ближайшее время мы свяжемся с вами.';
+    $message_success = "$email_to $subject $body $headers";
+    // $message_success = 'Собщение отправлено. В&nbsp;ближайшее время мы свяжемся с вами.';
 
     wp_send_json_success($message_success);
   }
