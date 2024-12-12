@@ -22,7 +22,7 @@
         </svg>
       </button>
     </div>
-    <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone'); ?>" class="header__callback" data-call-button>
+    <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone'); ?>" class="header__callback<?php if (is_new_year()): ?> header__callback_ng<?php endif; ?>" data-call-button>
       <span class="header__callback-text">
         Перезвоните мне
       </span>

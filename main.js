@@ -13,6 +13,7 @@ import { initCallButton } from './src/scripts/call-button'
 import { initOrderButton } from './src/scripts/order-button'
 import fslightbox from 'fslightbox'
 import { initMobileMenu } from './src/scripts/mobile-menu'
+import { initSnow } from './src/scripts/snow'
 
 initStickyHeader()
 initVideoCarousel()
@@ -22,3 +23,4 @@ initFeedbackForm()
 initCallButton()
 initOrderButton()
 initMobileMenu()
+initSnow()

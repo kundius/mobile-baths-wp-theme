@@ -11,10 +11,13 @@ $gallery = carbon_get_the_post_meta('crb_gallery');
 <body <?php body_class() ?>>
   <?php wp_body_open() ?>
 
-  <div class="flex flex-col min-h-screen">
+  <div class="flex flex-col min-h-screen relative overflow-hidden">
     <?php get_template_part('partials/header') ?>
 
     <section class="header-section">
+      <?php if (is_new_year()): ?>
+        <canvas id="snow" style="height:100%;width:100%;position:absolute;pointer-events:none;top:0;z-index:0"></canvas>
+      <?php endif; ?>
       <div class="container">
         <div class="flex flex-col items-center justify-center pt-9 pb-12 gap-7 max-lg:gap-4 max-lg:pt-6 max-lg:pb-8 max-md:pt-4 max-md:pb-6 max-md:gap-2">
           <?php $position = 0; ?>

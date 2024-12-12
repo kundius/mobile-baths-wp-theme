@@ -43,3 +43,14 @@ function icon($name, $size = 24)
 {
     echo get_icon($name, $size);
 }
+
+function is_new_year()
+{
+  if (date('m') === '12' && date('d') >= '12') {
+    return true;
+  }
+  if (date('m') === '01' && date('d') <= '10') {
+    return true;
+  }
+  return false;
+}

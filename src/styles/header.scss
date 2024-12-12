@@ -77,10 +77,6 @@
   right: var(--removed-body-scroll-bar-size, 0);
   z-index: 50;
 
-  .admin-bar & {
-    top: 32px;
-  }
-
   &[data-sticky-header='active'] {
     --header-height: 52px;
 
@@ -411,6 +407,29 @@
     width: 36px;
     padding: 0;
     margin: 4px;
+  }
+}
+
+.header__callback_ng::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: calc(1181px * 0.2);
+  height: calc(1000px * 0.2);
+  background: url('../images/ng1.png') no-repeat 50% 50%;
+  background-size: 100% 100%;
+  top: -30px;
+  right: -45px;
+  z-index: -1;
+  @include max-xl {
+    width: calc(1181px * 0.18);
+    height: calc(1000px * 0.18);
+  }
+  @include max-md {
+    width: calc(1181px * 0.15);
+    height: calc(1000px * 0.15);
+    top: -25px;
+    right: -98px;
   }
 }
 

@@ -13,10 +13,13 @@ Template Name: Главная
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
 
-  <div class="flex flex-col min-h-screen">
+  <div class="flex flex-col min-h-screen relative overflow-hidden">
     <?php get_template_part('partials/header'); ?>
 
     <section class="header-section header-section_landing">
+      <?php if (is_new_year()): ?>
+        <canvas id="snow" style="height:100%;width:100%;position:absolute;pointer-events:none;top:0;z-index:0"></canvas>
+      <?php endif; ?>
       <div class="container">
         <div class="flex flex-col items-center justify-center min-h-96 pt-12 pb-12 gap-16 max-lg:min-h-64 max-lg:pt-6 max-lg:pb-6 max-lg:gap-8 max-md:min-h-48 max-md:pt-4 max-md:pb-4 max-md:gap-6">
           <h1 class="header-section__title"><?php the_title(); ?></h1>
