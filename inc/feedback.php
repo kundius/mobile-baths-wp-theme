@@ -34,15 +34,18 @@ function ajax_action_feedback()
 
     $rows = [];
     if (!empty($_POST['your-name'])) {
-      $body[] = 'Имя: ' . sanitize_text_field($_POST['your-name']);
+      $rows[] = 'Имя: ' . sanitize_text_field($_POST['your-name']);
+    }
+    if (!empty($_POST['your-phone'])) {
+      $rows[] = 'Телефон: ' . sanitize_text_field($_POST['your-phone']);
     }
     if (!empty($_POST['your-email'])) {
-      $body[] = 'E-mail: ' . sanitize_text_field($_POST['your-email']);
+      $rows[] = 'E-mail: ' . sanitize_text_field($_POST['your-email']);
     }
     if (!empty($_POST['your-message'])) {
-      $body[] = 'Сообщение: ' . sanitize_text_field($_POST['your-message']);
+      $rows[] = 'Сообщение: ' . sanitize_text_field($_POST['your-message']);
     }
-    $body = 'test';
+    $body = implode("\n", $rows);
     $headers = '';
     // $headers .= 'From: ' . get_bloginfo('name') . ' <' . $email_to . '>' . "\r\n" . 'Reply-To: ' . $email_to;
 
