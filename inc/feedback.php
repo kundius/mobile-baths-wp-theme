@@ -48,8 +48,8 @@ function ajax_action_feedback()
     $body = implode("\n", $rows);
 
     $subject = 'Обратная связь';
-    if (!empty($_POST['your-subject'])) {
-      $subject = sanitize_text_field($_POST['your-subject']);
+    if (!empty($_POST['subject'])) {
+      $subject = sanitize_text_field($_POST['subject']);
     }
 
     wp_mail($email_to, $subject, $body);
