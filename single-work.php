@@ -55,7 +55,7 @@ $gallery = carbon_get_the_post_meta('crb_gallery');
       <div class="container">
         <div class="bg-white rounded p-5 shadow">
           <div class="flex gap-5 max-lg:flex-col">
-            <div class="w-full order-1">
+            <div class="w-full max-lg:order-1">
               <?php if ($gallery): ?>
                 <div class="work-carousel" data-work-carousel>
                   <div class="work-carousel__container">

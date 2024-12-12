@@ -50,6 +50,11 @@
   &:hover {
     background: #32333d;
   }
+  @include max-md {
+    color: #000;
+    right: 4px;
+    top: 4px;
+  }
 }
 
 .modal__overlay {
