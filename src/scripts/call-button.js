@@ -3,7 +3,7 @@ import { disableScroll, enableScroll } from './utils'
 
 export function applyCallButton(el) {
   el.addEventListener('click', (e) => {
-    if (window.matchMedia('min-width: 768px').matches) {
+    if (window.matchMedia('(min-width: 768px)').matches) {
       e.preventDefault()
 
       MicroModal.show('modal-call', {
