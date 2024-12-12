@@ -429,10 +429,10 @@
     right: -24px;
   }
   @include max-md {
-    width: calc(1181px * 0.15);
-    height: calc(1000px * 0.15);
+    width: 75px;
+    height: 160px;
     top: -20px;
-    right: -104px;
+    right: 0px;
   }
 }
 
