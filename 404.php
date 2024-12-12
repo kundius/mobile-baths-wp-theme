@@ -8,7 +8,7 @@
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
 
-  <div class="flex flex-col min-h-screen relative overflow-hidden">
+  <div class="flex flex-col min-h-screen">
     <?php get_template_part('partials/header'); ?>
 
     <section class="header-section">

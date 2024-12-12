@@ -416,14 +416,17 @@
   position: absolute;
   width: calc(1181px * 0.2);
   height: calc(1000px * 0.2);
-  background: url('../images/ng1.png') no-repeat 50% 50%;
-  background-size: 100% 100%;
+  background: url('../images/ng1.png') no-repeat 0 0;
+  background-size: auto 100%;
   top: -30px;
   right: -45px;
   z-index: -1;
   @include max-xl {
     width: calc(1181px * 0.18);
     height: calc(1000px * 0.18);
+  }
+  @include max-lg {
+    right: -24px;
   }
   @include max-md {
     width: calc(1181px * 0.15);
