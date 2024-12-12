@@ -31,6 +31,7 @@ function ajax_action_feedback()
     if (!$email_to) {
       $email_to = get_option('admin_email');
     }
+    
 
     $rows = [];
     if (!empty($_POST['your-name'])) {
