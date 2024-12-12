@@ -96,9 +96,9 @@ Template Name: Контакты
                 <div class="contacts-social">
                   <div class="contacts-social__title">Мы в соцсетях:</div>
                   <div class="contacts-social__items">
-                    <a href="#" class="contacts-social__item contacts-social__item-vk"></a>
-                    <a href="#" class="contacts-social__item contacts-social__item-rutube"></a>
-                    <a href="#" class="contacts-social__item contacts-social__item-ok"></a>
+                    <!-- <a href="#" class="contacts-social__item contacts-social__item-vk"></a> -->
+                    <a href="https://rutube.ru/channel/49132526/" target="_blank" class="contacts-social__item contacts-social__item-rutube"></a>
+                    <!-- <a href="#" class="contacts-social__item contacts-social__item-ok"></a> -->
                   </div>
                 </div>
               </div>
