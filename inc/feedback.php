@@ -46,18 +46,15 @@ function ajax_action_feedback()
       $rows[] = 'Сообщение: ' . sanitize_text_field($_POST['your-message']);
     }
     $body = implode("\n", $rows);
-    $headers = '';
-    // $headers .= 'From: ' . get_bloginfo('name') . ' <' . $email_to . '>' . "\r\n" . 'Reply-To: ' . $email_to;
 
     $subject = 'Обратная связь';
     if (!empty($_POST['your-subject'])) {
       $subject = sanitize_text_field($_POST['your-subject']);
     }
 
-    wp_mail($email_to, $subject, $body, $headers);
+    wp_mail($email_to, $subject, $body);
 
-    $message_success = "$email_to $subject $body $headers";
-    // $message_success = 'Собщение отправлено. В&nbsp;ближайшее время мы свяжемся с вами.';
+    $message_success = 'Собщение отправлено. В&nbsp;ближайшее время мы свяжемся с вами.';
 
     wp_send_json_success($message_success);
   }
