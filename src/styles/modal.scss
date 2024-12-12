@@ -43,6 +43,7 @@
   font-size: 18px;
   border-radius: 12px;
   color: #fff;
+  z-index: 2;
   cursor: pointer;
   &::before {
     content: '\2715';
