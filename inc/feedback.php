@@ -42,7 +42,7 @@ function ajax_action_feedback()
     if (!empty($_POST['your-message'])) {
       $body[] = 'Сообщение: ' . sanitize_text_field($_POST['your-message']);
     }
-    $body = implode("\n", $rows);
+    $body = 'test';
     $headers = '';
     // $headers .= 'From: ' . get_bloginfo('name') . ' <' . $email_to . '>' . "\r\n" . 'Reply-To: ' . $email_to;
 
