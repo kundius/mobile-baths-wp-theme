@@ -16,7 +16,7 @@ export function initSnow() {
 
   var flakes = [],
     size = 3,
-    count = canvas.clientWidth / 1440 * 400,
+    count = canvas.clientWidth / 1440 * 300,
     opacity = 0.7,
     context = canvas.getContext('2d'),
     width = canvas.clientWidth,
