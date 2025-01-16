@@ -21,7 +21,7 @@
         <img src="<?php bloginfo('template_url') ?>/dist/assets/logo-dark.png" alt="<?php bloginfo('name') ?>" />
       </a>
       <div class="underground-about__copyrigt">
-        © 2024, <strong>Мобильные баньки.рф</strong> -<br>
+        © 2025, <strong>Мобильные баньки.рф</strong> -<br>
         Бани от производителя
       </div>
     </div>
