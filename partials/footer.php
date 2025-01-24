@@ -67,7 +67,7 @@
       <div class="underground-social__items">
         <!-- <a href="#" class="underground-social__item underground-social__item-vk"></a> -->
         <a href="https://rutube.ru/channel/49132526/" target="_blank" class="underground-social__item underground-social__item-rutube"></a>
-        <a href="https://ok.ru/group/70000032164117" class="underground-social__item underground-social__item-ok"></a>
+        <a href="https://ok.ru/group/70000032164117" target="_blank" class="underground-social__item underground-social__item-ok"></a>
       </div>
     </div>
   </div>
