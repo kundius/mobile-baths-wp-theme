@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="application__layout-form">
-      <form action="<?php echo admin_url('admin-ajax.php') ?>" class="application__form" data-feedack-form>
+      <form action="<?php echo admin_url('admin-ajax.php') ?>" class="application__form" data-feedack-form data-feedack-form-goal="CONSULTATION">
         <input type="hidden" name="submitted" value="">
         <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
         <input type="hidden" name="subject" value="Обратная связь">

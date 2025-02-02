@@ -26,6 +26,14 @@ export function applyFeedbackForm(form) {
           form.reset()
           messages.innerHTML = result.data
 
+          if (form.dataset.feedackFormGoal && typeof ym !== 'undefined') {
+            const elYmId = document.querySelector('[data-ym-id]')
+            if (elYmId && elYmId.dataset.ymId) {
+              ym(elYmId.dataset.ymId, 'reachGoal', form.dataset.feedackFormGoal)
+              console.log('goal', elYmId.dataset.ymId, form.dataset.feedackFormGoal)
+            }
+          }
+
           setTimeout(() => {
             form.removeAttribute('data-feedack-form-status')
             messages.innerHTML = ''

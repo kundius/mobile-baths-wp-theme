@@ -106,7 +106,7 @@
           Перезвоните мне
         </div>
 
-        <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form>
+        <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form data-feedack-form-goal="MODAL_CALLBACK">
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
           <input type="hidden" name="subject" value="Перезвоните мне">
@@ -163,7 +163,7 @@
           Получить консультацию<br>по проекту
         </div>
 
-        <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form>
+        <form action="<?php echo admin_url('admin-ajax.php') ?>" class="modal-form" data-feedack-form data-feedack-form-goal="MODAL_CONSULTATION">
           <input type="hidden" name="submitted" value="">
           <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
           <input type="hidden" name="subject" value="Получить консультацию по проекту">

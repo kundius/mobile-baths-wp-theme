@@ -3,7 +3,7 @@
     <div class="contacts-feedback__headline-title">Есть вопросы<br>или предложения?</div>
     <div class="contacts-feedback__headline-desc">Пишите, обязательно ответим</div>
   </div>
-  <form action="<?php echo admin_url('admin-ajax.php') ?>" class="contacts-feedback__form" data-feedack-form>
+  <form action="<?php echo admin_url('admin-ajax.php') ?>" class="contacts-feedback__form" data-feedack-form data-feedack-form-goal="QUESTIONS_OR_SUGGESTIONS">
     <input type="hidden" name="submitted" value="">
     <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
     <input type="hidden" name="subject" value="Обратная связь">

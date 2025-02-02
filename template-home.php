@@ -263,7 +263,7 @@ Template Name: Главная
               </div>
             </div>
             <div class="w-1/2 xl:px-12 max-md:w-full">
-              <form action="<?php echo admin_url('admin-ajax.php') ?>" class="feedback" data-feedack-form>
+              <form action="<?php echo admin_url('admin-ajax.php') ?>" class="feedback" data-feedack-form data-feedack-form-goal="ASK_QUESTION">
                 <input type="hidden" name="submitted" value="">
                 <input type="hidden" name="nonce" value="<?php echo wp_create_nonce('feedback-nonce') ?>">
                 <input type="hidden" name="subject" value="Хочу задать вопрос">
