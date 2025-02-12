@@ -61,12 +61,12 @@ add_action('wp_head', function () {
         $keywords = carbon_get_the_post_meta('crb_seo_keywords');
     }
 
-    echo '<meta property="og:type" content="website">';
-    echo '<meta property="og:site_name" content="' . bloginfo('blogname') . '">';
-    echo '<meta property="og:locale" content="ru_RU">';
+    echo '<meta property="og:type" content="website">' . "\n";
+    echo '<meta property="og:site_name" content="' . bloginfo('blogname') . '">' . "\n";
+    echo '<meta property="og:locale" content="ru_RU">' . "\n";
     
     if (!empty($title)) {
-        echo '<title>' . $title . '</title> . "\n"';
+        echo '<title>' . $title . '</title>' . "\n";
         echo '<meta property="og:title" content="' . $title . '">' . "\n";
     }
 
