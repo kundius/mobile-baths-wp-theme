@@ -83,5 +83,9 @@ add_action('wp_head', function () {
         echo '<meta property="og:image" content="'. get_the_post_thumbnail_url(get_the_ID(), 'large') . '" />' . "\n";
         echo '<meta property="og:image:width" content="1024">' . "\n";
         echo '<meta property="og:image:height" content="1024">' . "\n";
+    } else {
+        echo '<meta property="og:image" content="https://мобильные-баньки.рф/wp-content/uploads/2024/12/foto_3.jpg" />' . "\n";
+        echo '<meta property="og:image:width" content="1023">' . "\n";
+        echo '<meta property="og:image:height" content="1021">' . "\n";
     }
 });
