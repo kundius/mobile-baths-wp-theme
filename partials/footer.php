@@ -7,7 +7,6 @@
           <span><?php icon('phone', 12) ?></span>
           <?php echo carbon_get_theme_option('crb_theme_phone') ?>
         </a>
-        <meta itemprop="openingHours" content="Пн - Сб : 09.00 - 20.00, Вс - выходной, без перерывов">
         <a itemprop="email" href="mailto:<?php echo carbon_get_theme_option('crb_theme_email') ?>" class="sticky-footer__email">
           <span><?php icon('mail', 12) ?></span>
           <?php echo carbon_get_theme_option('crb_theme_email') ?>
