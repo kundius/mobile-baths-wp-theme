@@ -1,97 +1,100 @@
-<section class="sticky-footer">
-  <div class="container sticky-footer__container">
-    <button type="button" class="sticky-footer__feedback" data-order-button>Заказать обратный звонок</button>
-    <div class="sticky-footer__contacts">
-      <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone') ?>" class="sticky-footer__phone">
-        <span><?php icon('phone', 12) ?></span>
-        <?php echo carbon_get_theme_option('crb_theme_phone') ?>
-      </a>
-      <a href="mail:<?php echo carbon_get_theme_option('crb_theme_email') ?>" class="sticky-footer__email">
-        <span><?php icon('mail', 12) ?></span>
-        <?php echo carbon_get_theme_option('crb_theme_email') ?>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="underground">
-  <div class="container underground-container">
-    <div class="underground-about">
-      <a href="/" class="underground-about__logo">
-        <img src="<?php bloginfo('template_url') ?>/dist/assets/logo-dark.png" alt="<?php bloginfo('name') ?>" />
-      </a>
-      <div class="underground-about__copyrigt">
-        © 2025, <strong>Мобильные баньки.рф</strong> -<br>
-        Бани от производителя<br>
-        ОГРНИП 325530000003661
+<div itemscope itemtype="https://schema.org/Organization">
+  <section class="sticky-footer">
+    <div class="container sticky-footer__container">
+      <button type="button" class="sticky-footer__feedback" data-order-button>Заказать обратный звонок</button>
+      <div class="sticky-footer__contacts">
+        <a itemprop="telephone" href="tel:<?php echo carbon_get_theme_option('crb_theme_phone') ?>" class="sticky-footer__phone">
+          <span><?php icon('phone', 12) ?></span>
+          <?php echo carbon_get_theme_option('crb_theme_phone') ?>
+        </a>
+        <meta itemprop="openingHours" content="Пн - Сб : 09.00 - 20.00, Вс - выходной, без перерывов">
+        <a itemprop="email" href="mail:<?php echo carbon_get_theme_option('crb_theme_email') ?>" class="sticky-footer__email">
+          <span><?php icon('mail', 12) ?></span>
+          <?php echo carbon_get_theme_option('crb_theme_email') ?>
+        </a>
       </div>
     </div>
-
-    <div class="underground-contacts">
-      <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone') ?>" class="underground-phone">
-        <span class="underground-phone__icon">
-          <?php icon('phone-filled', 18); ?>
-        </span>
-        <span class="underground-phone__text">
-          <span class="underground-phone__value"><?php echo carbon_get_theme_option('crb_theme_phone') ?></span>
-          <!-- <span class="underground-phone__desc">звонок по России бесплатный</span> -->
-        </span>
+  </section>
+  
+  <section class="underground">
+    <div class="container underground-container">
+      <div class="underground-about">
+        <a href="/" class="underground-about__logo">
+          <img itemprop="logo" src="<?php bloginfo('template_url') ?>/dist/assets/logo-dark.png" alt="<?php bloginfo('name') ?>" />
+        </a>
+        <div class="underground-about__copyrigt">
+          © 2025, <strong itemprop="name">Мобильные баньки.рф</strong> -<br>
+          Бани от производителя<br>
+          ОГРНИП 325530000003661
+        </div>
+      </div>
+  
+      <div class="underground-contacts">
+        <a href="tel:<?php echo carbon_get_theme_option('crb_theme_phone') ?>" class="underground-phone">
+          <span class="underground-phone__icon">
+            <?php icon('phone-filled', 18); ?>
+          </span>
+          <span class="underground-phone__text">
+            <span class="underground-phone__value"><?php echo carbon_get_theme_option('crb_theme_phone') ?></span>
+            <!-- <span class="underground-phone__desc">звонок по России бесплатный</span> -->
+          </span>
+        </a>
+        <a href="whatsapp://send?text=Hello&phone=<?php echo carbon_get_theme_option('crb_theme_whatsapp') ?>" class="underground-whatsapp">
+          <span class="underground-whatsapp__icon">
+            <?php icon('whatsapp', 36); ?>
+          </span>
+          <span class="underground-whatsapp-text">
+            <?php echo carbon_get_theme_option('crb_theme_whatsapp') ?>
+          </span>
+        </a>
+      </div>
+  
+      <div class="underground-menu">
+        <?php wp_nav_menu([
+          'container' => false,
+          'theme_location' => 'menu-footer',
+        ]); ?>
+      </div>
+  
+      <div class="underground-address">
+        <div class="underground-address__icon">
+          <?php icon('marker-filled', 20); ?>
+        </div>
+        <div class="underground-address__text">
+          <?php echo carbon_get_theme_option('crb_theme_address') ?>
+        </div>
+      </div>
+  
+      <div class="underground-social">
+        <div class="underground-social__title">Мы в соцсетях:</div>
+        <div class="underground-social__items">
+          <a itemprop="sameAs" href="https://vk.com/banimobilnie" target="_blank" class="underground-social__item underground-social__item-vk"></a>
+          <a itemprop="sameAs" href="https://rutube.ru/channel/49132526/" target="_blank" class="underground-social__item underground-social__item-rutube"></a>
+          <a itemprop="sameAs" href="https://ok.ru/group/70000032164117" target="_blank" class="underground-social__item underground-social__item-ok"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="footer">
+    <div class="container footer-container">
+      <div class="footer-counters"><?php echo carbon_get_theme_option('crb_theme_counters') ?></div>
+  
+      <div class="footer-links">
+        <?php if ($crb_sitemap_page = carbon_get_theme_option('crb_sitemap_page')): ?>
+          <a href="<?php the_permalink($crb_sitemap_page[0]['id']) ?>">Карта сайта</a>
+        <?php endif; ?>
+        <?php if ($crb_agreement_page = carbon_get_theme_option('crb_agreement_page')): ?>
+          <a href="<?php the_permalink($crb_agreement_page[0]['id']) ?>">Политика конфиденциальности</a>
+        <?php endif; ?>
+      </div>
+  
+      <a href="https://domenart-studio.ru/" target="_blank" class="footer-creator">
+        <img src="<?php bloginfo('template_url') ?>/src/images/creator.png" alt="Разработка и продвижение сайтов «ДоменАРТ»" />
       </a>
-      <a href="whatsapp://send?text=Hello&phone=<?php echo carbon_get_theme_option('crb_theme_whatsapp') ?>" class="underground-whatsapp">
-        <span class="underground-whatsapp__icon">
-          <?php icon('whatsapp', 36); ?>
-        </span>
-        <span class="underground-whatsapp-text">
-          <?php echo carbon_get_theme_option('crb_theme_whatsapp') ?>
-        </span>
-      </a>
     </div>
-
-    <div class="underground-menu">
-      <?php wp_nav_menu([
-        'container' => false,
-        'theme_location' => 'menu-footer',
-      ]); ?>
-    </div>
-
-    <div class="underground-address">
-      <div class="underground-address__icon">
-        <?php icon('marker-filled', 20); ?>
-      </div>
-      <div class="underground-address__text">
-        <?php echo carbon_get_theme_option('crb_theme_address') ?>
-      </div>
-    </div>
-
-    <div class="underground-social">
-      <div class="underground-social__title">Мы в соцсетях:</div>
-      <div class="underground-social__items">
-        <a href="https://vk.com/banimobilnie" target="_blank" class="underground-social__item underground-social__item-vk"></a>
-        <a href="https://rutube.ru/channel/49132526/" target="_blank" class="underground-social__item underground-social__item-rutube"></a>
-        <a href="https://ok.ru/group/70000032164117" target="_blank" class="underground-social__item underground-social__item-ok"></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="footer">
-  <div class="container footer-container">
-    <div class="footer-counters"><?php echo carbon_get_theme_option('crb_theme_counters') ?></div>
-
-    <div class="footer-links">
-      <?php if ($crb_sitemap_page = carbon_get_theme_option('crb_sitemap_page')): ?>
-        <a href="<?php the_permalink($crb_sitemap_page[0]['id']) ?>">Карта сайта</a>
-      <?php endif; ?>
-      <?php if ($crb_agreement_page = carbon_get_theme_option('crb_agreement_page')): ?>
-        <a href="<?php the_permalink($crb_agreement_page[0]['id']) ?>">Политика конфиденциальности</a>
-      <?php endif; ?>
-    </div>
-
-    <a href="https://domenart-studio.ru/" target="_blank" class="footer-creator">
-      <img src="<?php bloginfo('template_url') ?>/src/images/creator.png" alt="Разработка и продвижение сайтов «ДоменАРТ»" />
-    </a>
-  </div>
-</section>
+  </section>
+</div>
 
 <button class="scroll-up" type="button"></button>
 
