@@ -59,7 +59,7 @@
         <div class="underground-address__icon">
           <?php icon('marker-filled', 20); ?>
         </div>
-        <div class="underground-address__text">
+        <div class="underground-address__text" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
           <?php echo carbon_get_theme_option('crb_theme_address') ?>
         </div>
       </div>
