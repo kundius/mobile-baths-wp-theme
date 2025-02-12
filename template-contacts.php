@@ -74,6 +74,11 @@ Template Name: Контакты
                   </div>
                 </div>
 
+                <div>
+                  ИП Цветков Сергей Юрьевич<br>
+                  ИНН 531301747810
+                </div>
+
                 <div class="contacts-additional">
                   <div class="contacts-additional__item">
                     <div class="contacts-additional__item-icon">
