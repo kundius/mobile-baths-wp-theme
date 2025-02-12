@@ -67,21 +67,21 @@ add_action('wp_head', function () {
     
     if (!empty($title)) {
         echo '<title>' . $title . '</title> . "\n"';
-        echo '<meta property="og:title" content="' . $title . '"> . "\n"';
+        echo '<meta property="og:title" content="' . $title . '">' . "\n";
     }
 
     if (!empty($keywords)) {
-        echo '<meta name="keywords" content="' . $keywords . '"> . "\n"';
+        echo '<meta name="keywords" content="' . $keywords . '">' . "\n";
     }
 
     if (!empty($description)) {
-        echo '<meta name="description" content="' . $description . '"> . "\n"';
-        echo '<meta property="og:description" content="' . $description . '"> . "\n"';
+        echo '<meta name="description" content="' . $description . '">' . "\n";
+        echo '<meta property="og:description" content="' . $description . '">' . "\n";
     }
 
     if (has_post_thumbnail()) {
-        echo '<meta property="og:image" content="'. get_the_post_thumbnail_url(get_the_ID(), 'large') . '" /> . "\n"';
-        echo '<meta property="og:image:width" content="1024"> . "\n"';
-        echo '<meta property="og:image:height" content="1024"> . "\n"';
+        echo '<meta property="og:image" content="'. get_the_post_thumbnail_url(get_the_ID(), 'large') . '" />' . "\n";
+        echo '<meta property="og:image:width" content="1024">' . "\n";
+        echo '<meta property="og:image:height" content="1024">' . "\n";
     }
 });
