@@ -16,7 +16,7 @@ add_action('wp_head', function () {
 
     if (!empty($url)) {
         echo '<link rel="canonical" itemprop="url" href="' . esc_url($url) . '" />' . "\n";
-        echo '<meta property="og:url" content="' . esc_url($url) . '">';
+        echo '<meta property="og:url" content="' . esc_url($url) . '">' . "\n";
     }
 });
 
@@ -66,22 +66,22 @@ add_action('wp_head', function () {
     echo '<meta property="og:locale" content="ru_RU">';
     
     if (!empty($title)) {
-        echo '<title>' . $title . '</title>';
-        echo '<meta property="og:title" content="' . $title . '">';
+        echo '<title>' . $title . '</title> . "\n"';
+        echo '<meta property="og:title" content="' . $title . '"> . "\n"';
     }
 
     if (!empty($keywords)) {
-        echo '<meta name="keywords" content="' . $keywords . '">';
+        echo '<meta name="keywords" content="' . $keywords . '"> . "\n"';
     }
 
     if (!empty($description)) {
-        echo '<meta name="description" content="' . $description . '">';
-        echo '<meta property="og:description" content="' . $description . '">';
+        echo '<meta name="description" content="' . $description . '"> . "\n"';
+        echo '<meta property="og:description" content="' . $description . '"> . "\n"';
     }
 
     if (has_post_thumbnail()) {
-        echo '<meta property="og:image" content="'. get_the_post_thumbnail_url(get_the_ID(), 'large') . '" />';
-        echo '<meta property="og:image:width" content="1024">';
-        echo '<meta property="og:image:height" content="1024">';
+        echo '<meta property="og:image" content="'. get_the_post_thumbnail_url(get_the_ID(), 'large') . '" /> . "\n"';
+        echo '<meta property="og:image:width" content="1024"> . "\n"';
+        echo '<meta property="og:image:height" content="1024"> . "\n"';
     }
 });
