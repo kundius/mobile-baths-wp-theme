@@ -16,6 +16,7 @@ add_action('wp_head', function () {
 
     if (!empty($url)) {
         echo '<link rel="canonical" itemprop="url" href="' . esc_url($url) . '" />' . "\n";
+        echo '<meta property="og:url" content="' . esc_url($url) . '">';
     }
 });
 
@@ -60,8 +61,13 @@ add_action('wp_head', function () {
         $keywords = carbon_get_the_post_meta('crb_seo_keywords');
     }
 
+    echo '<meta property="og:type" content="website">';
+    echo '<meta property="og:site_name" content="' . bloginfo('blogname') . '">';
+    echo '<meta property="og:locale" content="ru_RU">';
+    
     if (!empty($title)) {
         echo '<title>' . $title . '</title>';
+        echo '<meta property="og:title" content="' . $title . '">';
     }
 
     if (!empty($keywords)) {
@@ -70,5 +76,12 @@ add_action('wp_head', function () {
 
     if (!empty($description)) {
         echo '<meta name="description" content="' . $description . '">';
+        echo '<meta property="og:description" content="' . $description . '">';
+    }
+
+    if (has_post_thumbnail()) {
+        echo '<meta property="og:image" content="'. get_the_post_thumbnail_url(get_the_ID(), 'large') . '" />';
+        echo '<meta property="og:image:width" content="1024">';
+        echo '<meta property="og:image:height" content="1024">';
     }
 });
