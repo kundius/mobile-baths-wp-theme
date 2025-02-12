@@ -62,7 +62,7 @@ add_action('wp_head', function () {
     }
 
     echo '<meta property="og:type" content="website">' . "\n";
-    echo '<meta property="og:site_name" content="' . bloginfo('blogname') . '">' . "\n";
+    echo '<meta property="og:site_name" content="' . get_bloginfo('blogname') . '">' . "\n";
     echo '<meta property="og:locale" content="ru_RU">' . "\n";
     
     if (!empty($title)) {
