@@ -132,6 +132,7 @@ function register_carbon_fields()
   Container::make('post_meta', 'SEO')
     ->where('post_type', '=', 'page')
     ->or_where('post_type', '=', 'post')
+    ->or_where('post_type', '=', 'work')
     ->add_fields([
 
       Field::make('text', 'crb_seo_title', 'Заголовок'),
