@@ -133,6 +133,7 @@ function register_carbon_fields()
     ->where('post_type', '=', 'page')
     ->or_where('post_type', '=', 'post')
     ->or_where('post_type', '=', 'work')
+    ->or_where('post_type', '=', 'project')
     ->add_fields([
 
       Field::make('text', 'crb_seo_title', 'Заголовок'),
