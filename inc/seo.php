@@ -28,7 +28,7 @@ add_action('wp_head', function () {
     if (is_archive()) {
         $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
         if ($term) {
-            $title = carbon_get_term_meta($term->term_id, 'title');
+            $title = carbon_get_term_meta($term->term_id, 'crb_seo_title');
             if (empty($title)) {
                 $title = $term->name;
             }
