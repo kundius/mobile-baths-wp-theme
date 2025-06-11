@@ -28,12 +28,12 @@ add_action('wp_head', function () {
     if (is_archive()) {
         $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
         if ($term) {
-            $title = carbon_get_the_post_meta('title', $term->taxonomy . '_' . $term->term_id);
+            $title = carbon_get_term_meta($term->term_id, 'title');
             if (empty($title)) {
                 $title = $term->name;
             }
-            $description = carbon_get_the_post_meta('crb_seo_description', $term->taxonomy . '_' . $term->term_id);
-            $keywords = carbon_get_the_post_meta('crb_seo_keywords', $term->taxonomy . '_' . $term->term_id);
+            $description = carbon_get_term_meta($term->term_id, 'crb_seo_description');
+            $keywords = carbon_get_term_meta($term->term_id, 'crb_seo_keywords');
         } elseif (is_post_type_archive()) {
             $title = get_queried_object()->labels->name;
         } elseif (is_day()) {
