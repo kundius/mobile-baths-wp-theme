@@ -159,7 +159,7 @@ Template Name: Главная
                   <figure class="work-card__image">
                     <?php the_post_thumbnail('archive'); ?>
                   </figure>
-                  <a href="<?php the_permalink() ?>" class="work-card__title"><?php the_title() ?></a>
+                  <a href="/nashi-raboty" class="work-card__title"><?php the_title() ?></a>
                 </article>
               <?php endwhile; ?>
               <?php wp_reset_postdata(); ?>
