@@ -149,7 +149,7 @@ Template Name: Главная
         <section class="works-section">
           <div class="container">
             <div class="works-section__headline">
-              <div class="works-section__headline-title">Наши работы 1</div>
+              <div class="works-section__headline-title">Наши работы</div>
               <a href="<?php the_permalink(33); ?>" class="works-section__headline-all"><span>Смотреть все</span><span></span></a>
             </div>
             <div class="grid grid-cols-4 gap-x-6 gap-y-10 mt-8 max-lg:grid-cols-3 max-md:grid-cols-2 max-md:gap-x-4 max-md:gap-y-8 max-md:mt-6">
