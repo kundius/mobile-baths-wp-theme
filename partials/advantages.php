@@ -32,7 +32,7 @@
         <div class="advantage-card__media-circle"></div>
         <div class="advantage-card__media-check"></div>
         <div class="advantage-card__media-icon">
-          <img src="" />
+          <img src="/wp-content/uploads/2025/07/iko-brigada-profi.png" />
         </div>
       </div>
       <div class="advantage-card__title">Профессиональных бригад</div>
@@ -43,7 +43,7 @@
         <div class="advantage-card__media-circle"></div>
         <div class="advantage-card__media-check"></div>
         <div class="advantage-card__media-icon">
-          <img src="" />
+          <img src="/wp-content/uploads/2025/07/iko-garanti.png" />
         </div>
       </div>
       <div class="advantage-card__title">Гарантия производителя</div>
@@ -54,7 +54,7 @@
         <div class="advantage-card__media-circle"></div>
         <div class="advantage-card__media-check"></div>
         <div class="advantage-card__media-icon">
-          <img src="" />
+          <img src="/wp-content/uploads/2025/07/iko-fiks-czena.png" />
         </div>
       </div>
       <div class="advantage-card__title">Длительный срок эксплуатации</div>
