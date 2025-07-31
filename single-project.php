@@ -184,7 +184,7 @@
         <?php if ($live_gallery = carbon_get_the_post_meta('crb_live_gallery')): ?>
         <div class="mt-5 bg-white rounded-xl p-5 shadow-main">
           <div class="work-gallery grid grid-cols-6 gap-5 max-lg:grid-cols-5 max-lg:gap-3 max-md:grid-cols-3 max-md:gap-2">
-            <?php foreach ($gallery as $key => $id): ?>
+            <?php foreach ($live_gallery as $key => $id): ?>
             <a
               class="work-gallery__item"
               href="<?php echo wp_get_attachment_image_url($id, 'original') ?>"
