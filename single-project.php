@@ -181,6 +181,20 @@
           </div>
         </div>
 
+        <?php if ($live_gallery = carbon_get_the_post_meta('crb_live_gallery')): ?>
+          <div class="work-gallery mt-5 grid grid-cols-6 gap-5 max-lg:grid-cols-5 max-lg:gap-3 max-md:grid-cols-3 max-md:gap-2">
+            <?php foreach ($gallery as $key => $id): ?>
+            <a
+              class="work-gallery__item"
+              href="<?php echo wp_get_attachment_image_url($id, 'original') ?>"
+              target="_blank"
+              data-fslightbox="gallery">
+              <?php echo wp_get_attachment_image($id, 'work-large'); ?>
+            </a>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+
         <div class="content my-12">
           <?php the_content(); ?>
         </div>
