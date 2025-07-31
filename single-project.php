@@ -182,7 +182,8 @@
         </div>
 
         <?php if ($live_gallery = carbon_get_the_post_meta('crb_live_gallery')): ?>
-          <div class="work-gallery mt-5 grid grid-cols-6 gap-5 max-lg:grid-cols-5 max-lg:gap-3 max-md:grid-cols-3 max-md:gap-2">
+        <div class="mt-5 bg-white rounded-xl p-5 shadow-main">
+          <div class="work-gallery grid grid-cols-6 gap-5 max-lg:grid-cols-5 max-lg:gap-3 max-md:grid-cols-3 max-md:gap-2">
             <?php foreach ($gallery as $key => $id): ?>
             <a
               class="work-gallery__item"
@@ -193,6 +194,7 @@
             </a>
             <?php endforeach; ?>
           </div>
+        </div>
         <?php endif; ?>
 
         <div class="content my-12">
