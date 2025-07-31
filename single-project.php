@@ -188,7 +188,7 @@
               class="work-gallery__item"
               href="<?php echo wp_get_attachment_image_url($id, 'original') ?>"
               target="_blank"
-              data-fslightbox="gallery">
+              data-fslightbox="live-gallery">
               <?php echo wp_get_attachment_image($id, 'work-large'); ?>
             </a>
             <?php endforeach; ?>
