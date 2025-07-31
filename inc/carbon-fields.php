@@ -125,6 +125,7 @@ function register_carbon_fields()
           Field::make('text', 'content', 'Значение')->set_width(50),
         ]),
       Field::make('media_gallery', 'crb_gallery', 'Галерея'),
+      Field::make('media_gallery', 'crb_live_gallery', 'Живые фото'),
       Field::make('checkbox', 'crb_is_sticky', 'Показывать на главной'),
 
     ]);
