@@ -25,13 +25,15 @@
         </div>
       </div>
       <div class="advantage-card__title">Вся Россия</div>
-      <div class="advantage-card__desc">Строим по всей России. Ближайшие к нам регионы - Ленинградская, Новгородская, Псковская, Тверская, Вологодская области</div>
+      <div class="advantage-card__desc">Строим по всей России. Ближайшие к нам регионы - Ленинградская, Новгородская, Псковская, Тверская, Вологодская, Московсая, Ярославская области</div>
     </article>
     <article class="advantage-card">
       <div class="advantage-card__media">
         <div class="advantage-card__media-circle"></div>
         <div class="advantage-card__media-check"></div>
-        <div class="advantage-card__media-text"><span>15</span></div>
+        <div class="advantage-card__media-icon">
+          <img src="" />
+        </div>
       </div>
       <div class="advantage-card__title">Профессиональных бригад</div>
       <div class="advantage-card__desc">Строим бани с 2009 года, и за 15 лет накопили большой опыт.<br> Мы уверенно гарантируем качество работы наших бригад</div>
@@ -40,7 +42,9 @@
       <div class="advantage-card__media">
         <div class="advantage-card__media-circle"></div>
         <div class="advantage-card__media-check"></div>
-        <div class="advantage-card__media-text"><span>3</span> года</div>
+        <div class="advantage-card__media-icon">
+          <img src="" />
+        </div>
       </div>
       <div class="advantage-card__title">Гарантия производителя</div>
       <div class="advantage-card__desc">Строим бани с 2009 года, и за 15 лет накопили большой опыт.<br> Мы уверенно гарантируем качество работы наших бригад</div>
@@ -49,7 +53,9 @@
       <div class="advantage-card__media">
         <div class="advantage-card__media-circle"></div>
         <div class="advantage-card__media-check"></div>
-        <div class="advantage-card__media-text"><span>20</span> лет</div>
+        <div class="advantage-card__media-icon">
+          <img src="" />
+        </div>
       </div>
       <div class="advantage-card__title">Длительный срок эксплуатации</div>
       <div class="advantage-card__desc">Мобильные бани нашего производства отличаются длительным сроком эксплуатации при соответствующем обслуживании</div>
