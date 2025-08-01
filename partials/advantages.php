@@ -35,8 +35,8 @@
           <img src="/wp-content/uploads/2025/07/iko-brigada-profi.png" />
         </div>
       </div>
-      <div class="advantage-card__title">Профессиональных бригад</div>
-      <div class="advantage-card__desc">Строим бани с 2009 года, и за 15 лет накопили большой опыт.<br> Мы уверенно гарантируем качество работы наших бригад</div>
+      <div class="advantage-card__title">Опыт и профессионализм строителей</div>
+      <div class="advantage-card__desc">Занимаемся строительством с 2000-х годов и за это время накопили большой опыт в данной сфере.<br> Мы уверенно гарантируем качество работы наших бригад</div>
     </article>
     <article class="advantage-card">
       <div class="advantage-card__media">
@@ -47,7 +47,7 @@
         </div>
       </div>
       <div class="advantage-card__title">Гарантия производителя</div>
-      <div class="advantage-card__desc">Строим бани с 2009 года, и за 15 лет накопили большой опыт.<br> Мы уверенно гарантируем качество работы наших бригад</div>
+      <div class="advantage-card__desc">Работаем строго по договору с гарантийными обязательствами и с соблюдением сроков</div>
     </article>
     <article class="advantage-card">
       <div class="advantage-card__media">
