@@ -57,8 +57,8 @@
           <img src="/wp-content/uploads/2025/07/iko-fiks-czena.png" />
         </div>
       </div>
-      <div class="advantage-card__title">Длительный срок эксплуатации</div>
-      <div class="advantage-card__desc">Мобильные бани нашего производства отличаются длительным сроком эксплуатации при соответствующем обслуживании</div>
+      <div class="advantage-card__title">Фиксированная цена</div>
+      <div class="advantage-card__desc">Окончательная стоимость строительства фиксируется в договоре.</div>
     </article>
     <article class="advantage-card">
       <div class="advantage-card__media">
@@ -67,7 +67,7 @@
         <div class="advantage-card__media-text"><span>500</span> км</div>
       </div>
       <div class="advantage-card__title">Бесплатная доставка</div>
-      <div class="advantage-card__desc">До 500 км в пределах МКАД бесплатная доставка<br> Мы уверенно гарантируем качество работы наших бригад</div>
+      <div class="advantage-card__desc">До 500 км от производственной базы (Новгородская обл., г. Пестово) - бесплатная доставка, далее доставка рассчитывается индивидуально для каждого клиента.</div>
     </article>
   </div>
 </div>
