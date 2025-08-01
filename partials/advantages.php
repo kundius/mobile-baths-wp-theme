@@ -35,7 +35,7 @@
           <img src="/wp-content/uploads/2025/07/iko-brigada-profi.png" />
         </div>
       </div>
-      <div class="advantage-card__title">Опыт и профессионализм строителей</div>
+      <div class="advantage-card__title">Опыт и профессионализм</div>
       <div class="advantage-card__desc">Занимаемся строительством с 2000-х годов и за это время накопили большой опыт в данной сфере.<br> Мы уверенно гарантируем качество работы наших бригад</div>
     </article>
     <article class="advantage-card">
