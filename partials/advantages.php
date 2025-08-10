@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="advantage-card__title">Вся Россия</div>
-      <div class="advantage-card__desc">Строим по всей России. Ближайшие к нам регионы - Ленинградская, Новгородская, Псковская, Тверская, Вологодская, Московсая, Ярославская области</div>
+      <div class="advantage-card__desc">Строим по всей России. Ближайшие к нам регионы - Ленинградская, Новгородская, Псковская, Тверская, Вологодская, Московская, Ярославская области</div>
     </article>
     <article class="advantage-card">
       <div class="advantage-card__media">
