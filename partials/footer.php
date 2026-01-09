@@ -22,7 +22,7 @@
           <img itemprop="logo" src="<?php bloginfo('template_url') ?>/dist/assets/logo-dark.png" alt="<?php bloginfo('name') ?>" />
         </a>
         <div class="underground-about__copyrigt">
-          © 2025, <strong itemprop="name">Мобильные баньки.рф</strong> -<br>
+          © 2026, <strong itemprop="name">Мобильные баньки.рф</strong> -<br>
           Бани от производителя<br>
           ОГРНИП 325530000003661
         </div>
