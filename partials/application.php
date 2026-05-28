@@ -7,7 +7,7 @@
     <div class="application__layout-profile">
       <div class="application__profile">
         <div class="application__profile-image"></div>
-        <div class="application__profile-name">Татьяна Смирнова</div>
+        <div class="application__profile-name">Ольга Кузнецова</div>
         <div class="application__profile-stat">52 реализованных проекта</div>
         <div class="application__profile-desc">Ведущий менеджер бесплатно проконсультирует и проведет точные расчеты</div>
       </div>
