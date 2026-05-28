@@ -74,10 +74,6 @@ Template Name: Контакты
                   </div>
                 </div>
 
-                <div>
-                  ИП Цветков Сергей Юрьевич
-                </div>
-
                 <div class="contacts-additional">
                   <div class="contacts-additional__item">
                     <div class="contacts-additional__item-icon">
