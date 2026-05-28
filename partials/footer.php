@@ -23,8 +23,7 @@
         </a>
         <div class="underground-about__copyrigt">
           © 2026, <strong itemprop="name">Мобильные баньки.рф</strong> -<br>
-          Бани от производителя<br>
-          ОГРНИП 325530000003661
+          Бани от производителя
         </div>
       </div>
   
